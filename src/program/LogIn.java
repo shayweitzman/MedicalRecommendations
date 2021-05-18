@@ -2,6 +2,7 @@ package program;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.CountDownLatch;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -32,11 +33,21 @@ public class LogIn implements ActionListener {
 	}
 	
 	private void checkUserName(String userName) {
-		if(userName.length() < 6 || userName.length() > 10)
+		if(userName.length() < 6 || userName.length() > 10) {
 			JOptionPane.showMessageDialog(SignInframe, "User name must be between 6 and 10 characters","Warning", JOptionPane.WARNING_MESSAGE);
-//		else if(userName.) {
-//			
-//		}
+			return;
+		}
+		int count = 0;
+		for(int i=0;i<userName.length();i++) {
+			if(Character.isDigit(userName.charAt(i)))
+				count++;
+			else if (!Character.isLetter(userName.charAt(i)))
+				JOptionPane.showMessageDialog(SignInframe, "User name must contain numbers and letters only","Warning", JOptionPane.WARNING_MESSAGE);
+		}
+		if(count > 2)
+			JOptionPane.showMessageDialog(SignInframe, "User name can contain 2 numbers max","Warning", JOptionPane.WARNING_MESSAGE);
+
+		
 	}
 	
 	private void checkID(String id) {
