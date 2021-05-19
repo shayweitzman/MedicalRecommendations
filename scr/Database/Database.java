@@ -34,6 +34,7 @@ public class Database {
 		String line = "";
 		String splitBy = ",";
 		Path currentRelativePath = Paths.get("");
+		
 		try {
 			// parsing a CSV file into BufferedReader class constructor
 			BufferedReader br = new BufferedReader(
@@ -49,7 +50,33 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-
+	public String isUserExist() {
+		String line = "";
+		String splitBy = ",";
+		Path currentRelativePath = Paths.get("");
+		try {
+			// parsing a CSV file into BufferedReader class constructor
+			BufferedReader br = new BufferedReader(
+					new FileReader(currentRelativePath.toAbsolutePath().toString() + "//Database//Users.csv"));
+			while ((line = br.readLine()) != null) // returns a Boolean value
+			{
+				String[] l = line.split(splitBy); // use comma as separator
+				if (l[0].equals(this.docID)) {
+					if(l[1].equals(this.username)) {
+						if(l[2].equals(this.password)) {
+							return "success";
+						}
+						return "wornd password";
+					}
+					return "wornd user name";
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return  "this Id des'nt exsis";
+	}
+	
 	private boolean isExist(String s1, int index) {
 		String line = "";
 		String splitBy = ",";
