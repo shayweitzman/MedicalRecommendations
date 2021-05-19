@@ -64,7 +64,8 @@ public class Wellcome {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton SignInButton = new JButton("Sign In");
+		JButton SignInButton = new JButton("Sign Up");
+		SignInButton.addActionListener((ActionListener)new SignUpFrame(frame));
 		SignInButton.setBackground(new Color(64,166,234));
 		SignInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		SignInButton.setForeground(Color.white);
