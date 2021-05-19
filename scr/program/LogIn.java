@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import Database.Database;
+
 public class LogIn extends Form implements ActionListener {
 
 	
@@ -16,6 +18,7 @@ public class LogIn extends Form implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		boolean valid = true;
 		valid = checkUserName(txtUserName.getText()) && valid;
 		valid = checkPassword(txtPassword.getText()) && valid;

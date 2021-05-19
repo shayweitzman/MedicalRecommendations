@@ -10,8 +10,8 @@ public abstract class Form {
 	protected JTextField txtPassword;
 	protected JTextField txtId;
 	
-	public Form(JFrame SignInframe, JTextField txtUserName, JTextField txtPassword, JTextField txtId) {
-		this.SignUpframe = SignInframe;
+	public Form(JFrame SignUpframe, JTextField txtUserName, JTextField txtPassword, JTextField txtId) {
+		this.SignUpframe = SignUpframe;
 		this.txtUserName = txtUserName;
 		this.txtPassword = txtPassword;
 		this.txtId = txtId;

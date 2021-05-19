@@ -16,16 +16,19 @@ import java.nio.file.Paths;
 import java.awt.Color;
 import javax.swing.JLabel;
 
+import Database.Database;
+
 //import program.*;
 
 public class Wellcome {
 
-	private JFrame frame;
+	public static JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
