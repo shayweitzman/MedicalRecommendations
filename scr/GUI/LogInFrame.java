@@ -31,7 +31,10 @@ public class LogInFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		frm.setVisible(false);
+		Path currentRelativePath = Paths.get("");
 		SignInframe = new JFrame();
+		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//icon.png");
+		SignInframe.setIconImage(img.getImage());
 		SignInframe.setBounds(100, 100, 780, 409);
 		SignInframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SignInframe.getContentPane().setBackground(Color.WHITE);
@@ -39,7 +42,7 @@ public class LogInFrame implements ActionListener {
 		SignInframe.setVisible(true);
 		
 		//JLabel lblNewLabel = new JLabel("Log In");
-		Path currentRelativePath = Paths.get("");
+		//Path currentRelativePath = Paths.get("");
 		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//sec.png");
 		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(image, 200,200));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
