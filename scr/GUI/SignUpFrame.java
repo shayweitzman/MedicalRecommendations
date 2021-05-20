@@ -35,6 +35,7 @@ public class SignUpFrame implements ActionListener {
 		frm.setVisible(false);
 		Path currentRelativePath = Paths.get("");
 		SignUpframe = new JFrame();
+		SignUpframe.setTitle("Sign Up");
 		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//icon.png");
 		SignUpframe.setIconImage(img.getImage());
 		SignUpframe.setBounds(100, 100, 780, 409);

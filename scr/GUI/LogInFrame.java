@@ -19,7 +19,7 @@ import program.LogIn;
 
 public class LogInFrame implements ActionListener {
 	private JFrame frm;
-	private JFrame SignUpframe;
+	private JFrame Loginframe;
 	private JTextField txtUserName;
 	private JTextField txtPassword;
 	private JTextField txtId;
@@ -32,14 +32,15 @@ public class LogInFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		frm.setVisible(false);
 		Path currentRelativePath = Paths.get("");
-		SignUpframe = new JFrame();
+		Loginframe = new JFrame();
+		Loginframe.setTitle("Login");
 		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//icon.png");
-		SignUpframe.setIconImage(img.getImage());
-		SignUpframe.setBounds(100, 100, 780, 409);
-		SignUpframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		SignUpframe.getContentPane().setBackground(Color.WHITE);
-		SignUpframe.getContentPane().setLayout(null);
-		SignUpframe.setVisible(true);
+		Loginframe.setIconImage(img.getImage());
+		Loginframe.setBounds(100, 100, 780, 409);
+		Loginframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Loginframe.getContentPane().setBackground(Color.WHITE);
+		Loginframe.getContentPane().setLayout(null);
+		Loginframe.setVisible(true);
 		
 		//JLabel lblNewLabel = new JLabel("Log In");
 		//Path currentRelativePath = Paths.get("");
@@ -47,13 +48,13 @@ public class LogInFrame implements ActionListener {
 		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(image, 200,200));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblNewLabel.setBounds(280, -20, 200, 200);
-		SignUpframe.getContentPane().add(lblNewLabel);
+		Loginframe.getContentPane().add(lblNewLabel);
 		
 		txtUserName = new JTextField("User Name",8);
 		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		//txtUserName.setText("User Name");
 		txtUserName.setBounds(250, 153, 276, 35);
-		SignUpframe.getContentPane().add(txtUserName);
+		Loginframe.getContentPane().add(txtUserName);
 		txtUserName.setColumns(10);
 		
 		txtPassword = new JTextField("Password",10);
@@ -61,21 +62,21 @@ public class LogInFrame implements ActionListener {
 		txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		txtPassword.setColumns(10);
 		txtPassword.setBounds(250, 193, 276, 35);
-		SignUpframe.getContentPane().add(txtPassword);
+		Loginframe.getContentPane().add(txtPassword);
 		
 		txtId = new JTextField("ID");
 		//txtId.setText("ID");
 		txtId.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		txtId.setColumns(10);
 		txtId.setBounds(250, 236, 276, 35);
-		SignUpframe.getContentPane().add(txtId);
+		Loginframe.getContentPane().add(txtId);
 		
 		JButton backButton = new JButton("Back");
 		backButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				SignUpframe.dispose();
+				Loginframe.dispose();
 				frm.setVisible(true);
 			}
 		});
@@ -83,15 +84,15 @@ public class LogInFrame implements ActionListener {
 		backButton.setBounds(50, 280, 231, 60);
 		backButton.setBackground(new Color(64,166,234));
 		backButton.setForeground(Color.white);
-		SignUpframe.getContentPane().add(backButton);
+		Loginframe.getContentPane().add(backButton);
 		
 		JButton logInButton = new JButton("login");
-		logInButton.addActionListener((ActionListener)new LogIn(SignUpframe, txtUserName, txtPassword, txtId));
+		logInButton.addActionListener((ActionListener)new LogIn(Loginframe, txtUserName, txtPassword, txtId));
 		logInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		logInButton.setBounds(500, 280, 231, 60);
 		logInButton.setBackground(new Color(64,166,234));
 		logInButton.setForeground(Color.white);
-		SignUpframe.getContentPane().add(logInButton);
+		Loginframe.getContentPane().add(logInButton);
 		
 	}
 

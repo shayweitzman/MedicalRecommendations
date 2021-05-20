@@ -60,6 +60,7 @@ public class Wellcome {
 	private void initialize() {
 		Path currentRelativePath = Paths.get("");
 		frame = new JFrame();
+		frame.setTitle("Wellcome");
 		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//icon.png");
 		frame.setIconImage(img.getImage());
 		frame.getContentPane().setBackground(Color.WHITE);
