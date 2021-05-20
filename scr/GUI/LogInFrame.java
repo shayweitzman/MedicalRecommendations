@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -86,12 +87,14 @@ public class LogInFrame implements ActionListener {
 		backButton.setForeground(Color.white);
 		Loginframe.getContentPane().add(backButton);
 		
-		JButton logInButton = new JButton("login");
+		JButton logInButton = new JButton("Login");
 		logInButton.addActionListener((ActionListener)new LogIn(Loginframe, txtUserName, txtPassword, txtId));
 		logInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		logInButton.setBounds(500, 280, 231, 60);
 		logInButton.setBackground(new Color(64,166,234));
 		logInButton.setForeground(Color.white);
+		logInButton.setMnemonic(KeyEvent.VK_ENTER);
+		
 		Loginframe.getContentPane().add(logInButton);
 		
 	}
