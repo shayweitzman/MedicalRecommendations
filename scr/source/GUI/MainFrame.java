@@ -104,7 +104,7 @@ public class MainFrame {
 		IdField = new JTextField();
 		IdField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		IdField.setColumns(10);
-		IdField.setBounds(309, 267, 135, 37);
+		IdField.setBounds(284, 267, 160, 37);
 		frame.getContentPane().add(IdField);
 		
 		JLabel ageLabel = new JLabel("Age");
@@ -207,7 +207,7 @@ public class MainFrame {
 		creatinieField = new JTextField();
 		creatinieField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		creatinieField.setColumns(10);
-		creatinieField.setBounds(139, 419, 98, 37);
+		creatinieField.setBounds(139, 419, 94, 37);
 		frame.getContentPane().add(creatinieField);
 		
 		ironField = new JTextField();
@@ -230,9 +230,8 @@ public class MainFrame {
 		
 		JButton diagnoseButton = new JButton("diagnose");
 		
-		diagnoseButton.addActionListener((ActionListener)new diagnose(nameField.getText(), IdField.getText(), ageField.getText(), WBCField.getText(),
-		neutField.getText(), lymphField.getText(), UreaField.getText(),RBCField.getText(), hbField.getText(),creatinieField.getText(),
-		ironField.getText(),HDLField.getText(),APField.getText()));
+		diagnoseButton.addActionListener((ActionListener)new diagnose(frame, nameField, IdField, ageField, WBCField, neutField,
+				lymphField, UreaField,RBCField, hbField,creatinieField,ironField,HDLField,APField));
 		
 		diagnoseButton.setBackground(new Color(64,166,234));
 		diagnoseButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
