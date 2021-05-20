@@ -57,6 +57,7 @@ public class MainFrame {
 		
 		ImageIcon logOut = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//logOut.png");
 		JButton logOutButton = new JButton(Wellcome.resizeIcon(logOut, 50,50));
+		logOutButton.setToolTipText("Log Out");
 		logOutButton.setBackground(Color.white);
 		logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		logOutButton.addActionListener(new ActionListener() {
