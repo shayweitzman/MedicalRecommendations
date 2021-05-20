@@ -41,11 +41,8 @@ public class LogInFrame implements ActionListener {
 		SignUpframe.getContentPane().setLayout(null);
 		SignUpframe.setVisible(true);
 		
-		//JLabel lblNewLabel = new JLabel("Log In");
-		//Path currentRelativePath = Paths.get("");
 		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//sec.png");
 		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(image, 200,200));
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblNewLabel.setBounds(280, -20, 200, 200);
 		SignUpframe.getContentPane().add(lblNewLabel);
 		
@@ -55,6 +52,24 @@ public class LogInFrame implements ActionListener {
 		txtUserName.setBounds(250, 153, 276, 35);
 		SignUpframe.getContentPane().add(txtUserName);
 		txtUserName.setColumns(10);
+
+		ImageIcon usernameImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//Username.png");
+		JLabel lblUsernameLabel = new JLabel(Wellcome.resizeIcon(usernameImage, 35,35));
+		lblUsernameLabel.setBounds(120, 80, 180, 180);
+		SignUpframe.getContentPane().add(lblUsernameLabel);
+		
+		ImageIcon passwordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//password.png");
+		JLabel lblPassLabel = new JLabel(Wellcome.resizeIcon(passwordImage, 45,45));
+		lblPassLabel.setBounds(110, 110, 200, 200);
+		SignUpframe.getContentPane().add(lblPassLabel);
+		
+		ImageIcon idImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//ID.png");
+		JLabel lblIDLabel = new JLabel(Wellcome.resizeIcon(idImage, 45,45));
+		lblIDLabel.setBounds(110, 150, 200, 200);
+		SignUpframe.getContentPane().add(lblIDLabel);
+		
+		
+		
 		
 		txtPassword = new JTextField("Password",10);
 		//txtPassword.setText();
@@ -85,7 +100,7 @@ public class LogInFrame implements ActionListener {
 		backButton.setForeground(Color.white);
 		SignUpframe.getContentPane().add(backButton);
 		
-		JButton logInButton = new JButton("login");
+		JButton logInButton = new JButton("Login");
 		logInButton.addActionListener((ActionListener)new LogIn(SignUpframe, txtUserName, txtPassword, txtId));
 		logInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		logInButton.setBounds(500, 280, 231, 60);

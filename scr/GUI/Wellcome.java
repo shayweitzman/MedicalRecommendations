@@ -75,7 +75,7 @@ public class Wellcome {
 		SignInButton.setBounds(50, 266, 302, 83);
 		frame.getContentPane().add(SignInButton);
 		
-		JButton LogInButton = new JButton("Log In");
+		JButton LogInButton = new JButton("Login");
 		LogInButton.addActionListener((ActionListener)new LogInFrame(frame));
 		LogInButton.setBackground(new Color(64,166,234));
 		LogInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));

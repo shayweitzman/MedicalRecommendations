@@ -43,13 +43,42 @@ public class SignUpFrame implements ActionListener {
 		SignUpframe.getContentPane().setLayout(null);
 		SignUpframe.setVisible(true);
 		
-		//JLabel lblNewLabel = new JLabel("Log In");
-		//Path currentRelativePath = Paths.get("");
+		
 		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//third.png");
 		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(image, 100,100));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblNewLabel.setBounds(340, 0, 100, 100);
 		SignUpframe.getContentPane().add(lblNewLabel);
+		
+		
+		
+		//
+		ImageIcon usernameImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//Username.png");
+		JLabel lblUsernameLabel = new JLabel(Wellcome.resizeIcon(usernameImage, 35,35));
+		lblUsernameLabel.setBounds(120, 40, 180, 180);
+		SignUpframe.getContentPane().add(lblUsernameLabel);
+		
+		ImageIcon passwordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//password.png");
+		JLabel lblPassLabel = new JLabel(Wellcome.resizeIcon(passwordImage, 45,45));
+		lblPassLabel.setBounds(110, 70, 200, 200);
+		SignUpframe.getContentPane().add(lblPassLabel);
+
+		ImageIcon cPasswordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//confirmpassword.png");
+		JLabel lblCPassLabel = new JLabel(Wellcome.resizeIcon(cPasswordImage, 55,55));
+		lblCPassLabel.setBounds(115, 105, 200, 200);
+		SignUpframe.getContentPane().add(lblCPassLabel);
+		
+		ImageIcon idImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//ID.png");
+		JLabel lblIDLabel = new JLabel(Wellcome.resizeIcon(idImage, 45,45));
+		lblIDLabel.setBounds(110, 150, 200, 200);
+		SignUpframe.getContentPane().add(lblIDLabel);	
+		
+		
+		
+		//
+		
+		
+		
 		
 		txtUserName = new JTextField("User Name");
 		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
