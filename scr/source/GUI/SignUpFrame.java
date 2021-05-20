@@ -36,7 +36,7 @@ public class SignUpFrame implements ActionListener {
 		Path currentRelativePath = Paths.get("");
 		SignUpframe = new JFrame();
 		SignUpframe.setTitle("Sign Up");
-		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//icon.png");
+		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
 		SignUpframe.setIconImage(img.getImage());
 		SignUpframe.setBounds(100, 100, 780, 409);
 		SignUpframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,7 +45,7 @@ public class SignUpFrame implements ActionListener {
 		SignUpframe.setVisible(true);
 		
 		
-		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//third.png");
+		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//third.png");
 		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(image, 100,100));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblNewLabel.setBounds(340, 0, 100, 100);
@@ -54,22 +54,22 @@ public class SignUpFrame implements ActionListener {
 		
 		
 		//
-		ImageIcon usernameImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//Username.png");
+		ImageIcon usernameImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//Username.png");
 		JLabel lblUsernameLabel = new JLabel(Wellcome.resizeIcon(usernameImage, 35,35));
 		lblUsernameLabel.setBounds(120, 40, 180, 180);
 		SignUpframe.getContentPane().add(lblUsernameLabel);
 		
-		ImageIcon passwordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//password.png");
+		ImageIcon passwordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//password.png");
 		JLabel lblPassLabel = new JLabel(Wellcome.resizeIcon(passwordImage, 45,45));
 		lblPassLabel.setBounds(110, 70, 200, 200);
 		SignUpframe.getContentPane().add(lblPassLabel);
 
-		ImageIcon cPasswordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//confirmpassword.png");
+		ImageIcon cPasswordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//confirmpassword.png");
 		JLabel lblCPassLabel = new JLabel(Wellcome.resizeIcon(cPasswordImage, 55,55));
 		lblCPassLabel.setBounds(115, 105, 200, 200);
 		SignUpframe.getContentPane().add(lblCPassLabel);
 		
-		ImageIcon idImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//ID.png");
+		ImageIcon idImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//ID.png");
 		JLabel lblIDLabel = new JLabel(Wellcome.resizeIcon(idImage, 45,45));
 		lblIDLabel.setBounds(110, 150, 200, 200);
 		SignUpframe.getContentPane().add(lblIDLabel);	

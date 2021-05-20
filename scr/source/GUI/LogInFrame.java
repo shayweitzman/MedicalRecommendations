@@ -35,7 +35,7 @@ public class LogInFrame implements ActionListener {
 		Path currentRelativePath = Paths.get("");
 		Loginframe = new JFrame();
 		Loginframe.setTitle("Login");
-		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//icon.png");
+		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
 		Loginframe.setIconImage(img.getImage());
 		Loginframe.setBounds(100, 100, 780, 409);
 		Loginframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,7 +43,7 @@ public class LogInFrame implements ActionListener {
 		Loginframe.getContentPane().setLayout(null);
 		Loginframe.setVisible(true);
 		
-		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//sec.png");
+		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//sec.png");
 		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(image, 200,200));
 		lblNewLabel.setBounds(280, -20, 200, 200);
 		Loginframe.getContentPane().add(lblNewLabel);
@@ -55,17 +55,17 @@ public class LogInFrame implements ActionListener {
 		Loginframe.getContentPane().add(txtUserName);
 		txtUserName.setColumns(10);
 
-		ImageIcon usernameImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//Username.png");
+		ImageIcon usernameImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//Username.png");
 		JLabel lblUsernameLabel = new JLabel(Wellcome.resizeIcon(usernameImage, 35,35));
 		lblUsernameLabel.setBounds(120, 80, 180, 180);
 		Loginframe.getContentPane().add(lblUsernameLabel);
 		
-		ImageIcon passwordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//password.png");
+		ImageIcon passwordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//password.png");
 		JLabel lblPassLabel = new JLabel(Wellcome.resizeIcon(passwordImage, 45,45));
 		lblPassLabel.setBounds(110, 110, 200, 200);
 		Loginframe.getContentPane().add(lblPassLabel);
 		
-		ImageIcon idImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//ID.png");
+		ImageIcon idImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//ID.png");
 		JLabel lblIDLabel = new JLabel(Wellcome.resizeIcon(idImage, 45,45));
 		lblIDLabel.setBounds(110, 150, 200, 200);
 		Loginframe.getContentPane().add(lblIDLabel);

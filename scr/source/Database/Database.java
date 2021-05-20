@@ -38,7 +38,7 @@ public class Database {
 		try {
 			// parsing a CSV file into BufferedReader class constructor
 			BufferedReader br = new BufferedReader(
-					new FileReader(currentRelativePath.toAbsolutePath().toString() + "//Database//Users.csv"));
+					new FileReader(currentRelativePath.toAbsolutePath().toString() + "//source//Database//Users.csv"));
 			while ((line = br.readLine()) != null) // returns a Boolean value
 			{
 				System.out.println(line);
@@ -57,7 +57,7 @@ public class Database {
 		try {
 			// parsing a CSV file into BufferedReader class constructor
 			BufferedReader br = new BufferedReader(
-					new FileReader(currentRelativePath.toAbsolutePath().toString() + "//Database//Users.csv"));
+					new FileReader(currentRelativePath.toAbsolutePath().toString() + "//source//Database//Users.csv"));
 			while ((line = br.readLine()) != null) // returns a Boolean value
 			{
 				String[] l = line.split(splitBy); // use comma as separator
@@ -84,7 +84,7 @@ public class Database {
 		try {
 			// parsing a CSV file into BufferedReader class constructor
 			BufferedReader br = new BufferedReader(
-					new FileReader(currentRelativePath.toAbsolutePath().toString() + "//Database//Users.csv"));
+					new FileReader(currentRelativePath.toAbsolutePath().toString() + "//source//Database//Users.csv"));
 			while ((line = br.readLine()) != null) // returns a Boolean value
 			{
 				String[] l = line.split(splitBy); // use comma as separator
@@ -99,7 +99,7 @@ public class Database {
 
 	public String Write() {
 		Path currentRelativePath = Paths.get("");
-		File file = new File(currentRelativePath.toAbsolutePath().toString() + "//Database//Users.csv");
+		File file = new File(currentRelativePath.toAbsolutePath().toString() + "//source//Database//Users.csv");
 		if (isExist(this.docID,0))
 		{
 			return "This ID is Already Taken";

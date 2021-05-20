@@ -49,13 +49,13 @@ public class MainFrame {
 		Path currentRelativePath = Paths.get("");
 		frame = new JFrame();
 		frame.setTitle("Patient Details");
-		ImageIcon icon = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//icon.png");
+		ImageIcon icon = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
 		frame.setIconImage(icon.getImage());
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setLayout(null);
 		this.frame.setVisible(true);
 		
-		ImageIcon logOut = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//logOut.png");
+		ImageIcon logOut = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//logOut.png");
 		JButton logOutButton = new JButton(Wellcome.resizeIcon(logOut, 50,50));
 		logOutButton.setToolTipText("Log Out");
 		logOutButton.setBackground(Color.white);
@@ -76,7 +76,7 @@ public class MainFrame {
 		docNameLabel.setBounds(0, 0, 180, 37);
 		frame.getContentPane().add(docNameLabel);
 		
-		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//forth.png");
+		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//forth.png");
 		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(img, 256,256));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel.setBounds(190, -20, 256, 256);

@@ -61,7 +61,7 @@ public class Wellcome {
 		Path currentRelativePath = Paths.get("");
 		frame = new JFrame();
 		frame.setTitle("Wellcome");
-		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//icon.png");
+		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
 		frame.setIconImage(img.getImage());
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 780, 409);
@@ -85,7 +85,7 @@ public class Wellcome {
 		frame.getContentPane().add(LogInButton);
 		
 		
-		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//images//first (1).png");
+		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//first (1).png");
 		JLabel imagelabel = new JLabel(resizeIcon(image, 300,300));
 		//Image resizedImage = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); 
 		imagelabel.setBounds(234, -10, 300, 300);
