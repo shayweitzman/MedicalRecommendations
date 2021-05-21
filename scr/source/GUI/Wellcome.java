@@ -32,7 +32,7 @@ public class Wellcome {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainFrame x = new MainFrame("aln");
+					//MainFrame x = new MainFrame("aln");
 					Wellcome window = new Wellcome();
 					window.frame.setVisible(true);
 				} catch (Exception e) {

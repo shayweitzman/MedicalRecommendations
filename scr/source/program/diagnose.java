@@ -17,10 +17,12 @@ public class diagnose implements ActionListener {
 	private Map<Diseases, Integer> totalDiagnose;
 	private JFrame frame;
 	private Boolean smoker = null;
+	private Boolean man = null;
 	private Boolean pregnant = null;
 	private Boolean fever = null;
 	private Boolean ethiopian = null;
 	private Boolean NAfrica = null;
+	private Boolean Diarrhea = null;
 	
 	public static final int COMMON = 3;
 	public static final int RARE = 1;
@@ -74,11 +76,34 @@ public class diagnose implements ActionListener {
 		
 		
 	}
+	
+	private void addRisk(Diseases d, int range) {
+		this.totalDiagnose.put(d,this.totalDiagnose.get(d)+range);
+	}
+	
+	private Boolean forward_question(Boolean bol, String msg){
+		if(bol != null)
+			return bol;
+		int result = JOptionPane.showConfirmDialog(frame,msg, "Forward Question",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+		return result == JOptionPane.YES_OPTION;
+		
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(checkInput()) {
+			
 			checkWBC(this.dictionary.get("WBC").getText(), Integer.parseInt(this.dictionary.get("age").getText()));
+			checkNeut(this.dictionary.get("WBC").getText(), this.dictionary.get("neut").getText());
+			checkLymph(this.dictionary.get("WBC").getText(), this.dictionary.get("lymph").getText());
+			checkRBC(this.dictionary.get("RBC").getText());
+			checkHCT(this.dictionary.get("RBC").getText(), this.dictionary.get("WBC").getText());
+			checkUrea(this.dictionary.get("Urea").getText());
+			checkCreatinie(this.dictionary.get("creatinie").getText(), Integer.parseInt(this.dictionary.get("age").getText()));
+			checkIron(this.dictionary.get("iron").getText());
+			checkHDL(this.dictionary.get("HDL").getText());
+			//checkHDL(this.dictionary.get("HDL").getText());
+			
 			for(Diseases i : this.totalDiagnose.keySet())
 				System.out.println(i + ": " + this.totalDiagnose.get(i));
 			this.frame.dispose();
@@ -103,14 +128,10 @@ public class diagnose implements ActionListener {
 			min = 6000;
 			max = 17500;
 		}
-		Boolean range = Value_range(val, max, min);
-		if(range == null)
+		if(val >= min && val <= max)
 			return;
-		if(range) {
-			if(fever == null) {
-				int result = JOptionPane.showConfirmDialog(frame,"Sure? You want to exit?", "Swing Tester",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
-				this.fever = result == JOptionPane.YES_OPTION;
-			}
+		if(val > max) {
+			this.fever = forward_question(fever, "Does the patient suffer from fever?");
 			if(fever) {
 				addRisk(Diseases.Infection, COMMON);
 			}
@@ -122,21 +143,275 @@ public class diagnose implements ActionListener {
 			addRisk(Diseases.cancer, RARE);
 			
 		}
-			
-
 	}
 	
-	private void addRisk(Diseases d, int range) {
-		this.totalDiagnose.put(d,this.totalDiagnose.get(d)+range);
+	private void checkNeut(String WBC, String neut) {
+		if(WBC.length() == 0 || neut.length() == 0 || Integer.parseInt(WBC) == 0)
+			return;
+		double precent = (double)Integer.parseInt(neut)/Integer.parseInt(WBC);
+		if(precent >= 28 && precent <= 54)
+			return;
+		if(precent < 28) {
+			addRisk(Diseases.Disorder_of_blood_formation,COMMON);
+			addRisk(Diseases.Infection,COMMON);//Bacterial infection
+			addRisk(Diseases.cancer,RARE);
+		}
+		else
+			addRisk(Diseases.Infection,COMMON);//Bacterial infection
 	}
 	
-	private Boolean Value_range(int val,int max,int min) {
+	private void checkLymph(String WBC, String Lymph) {
+		if(WBC.length() == 0 || Lymph.length() == 0 || Integer.parseInt(WBC) == 0)
+			return;
+		double precent = Double.parseDouble(Lymph)/Double.parseDouble(WBC);
+		if(precent >= 36 && precent <= 52)
+			return;
+		if(precent < 36)
+			addRisk(Diseases.Disorder_of_blood_formation,COMMON);
+		else {
+			addRisk(Diseases.cancer,COMMON);// Lymphoma cancer
+			addRisk(Diseases.Disorder_of_blood_formation,COMMON);// Bacterial infection
+		}
+		
+	}
+	
+	private void checkRBC(String RBC) {
+		if(RBC.length() == 0)
+			return;
+		double val = Double.parseDouble(RBC);
+		if(val >= 4.5 && val <= 6) 
+			return;
+		if(val > 6) {
+			this.smoker = forward_question(smoker, "Do the patient smoke?");
+			if(this.smoker)
+				addRisk(Diseases.Smoker,COMMON);
+			addRisk(Diseases.Disorder_of_blood_formation,COMMON);
+			addRisk(Diseases.Lung_disease,COMMON);
+		}
+		else {
+			addRisk(Diseases.anemia,COMMON);
+			addRisk(Diseases.bleeding,COMMON);
+		}
+	}
+	
+	private void checkHCT(String RBC, String WBC) {
+		if(WBC.length() == 0 || RBC.length() == 0 || Integer.parseInt(WBC) == 0)
+			return;
+		double precent = Double.parseDouble(RBC)/(Double.parseDouble(WBC) + Double.parseDouble(RBC));
+		this.man = forward_question(man, "Does the patient male?");
+		int max, min;
+		if(this.man) {
+			max = 54;
+			min = 37;
+		}
+		else {
+			max = 47;
+			min = 33;
+		}
+		if(precent >= min && precent <= max)
+			return;
+		if(precent > max) {
+			this.smoker = forward_question(smoker, "Does the patient smoke?");
+			if(this.smoker)
+				addRisk(Diseases.Smoker,COMMON);
+		}
+		else {
+			addRisk(Diseases.anemia,COMMON);
+			addRisk(Diseases.bleeding,COMMON);
+		}
+	}
+	
+	private void checkUrea(String Urea) {
+		if(Urea.length() == 0)
+			return;
+		int min = 17,max = 43;
+		this.NAfrica = forward_question(NAfrica, "Does the patient have oriental roots?");
+		if(this.NAfrica)
+			max *= 1.1;
+		int val = Integer.parseInt(Urea);
 		if(val >= min && val <= max)
-			return null;
-		if(val < min)
-			return false;
-		return true;
+			return;
+		if(val > max) {
+			addRisk(Diseases.Kidney_disease,COMMON);
+			addRisk(Diseases.Dehydration,COMMON);
+			addRisk(Diseases.diet,COMMON);
+		}
+		else {
+			this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
+			if(this.pregnant) {
+				addRisk(Diseases.Malnutrition,RARE);
+				addRisk(Diseases.diet,RARE);
+				addRisk(Diseases.Liver_disease,RARE);
+			}
+			else {
+				addRisk(Diseases.Malnutrition,COMMON);
+				addRisk(Diseases.diet,COMMON);
+				addRisk(Diseases.Liver_disease,COMMON);
+			}
+		}
 	}
+	
+	private void checkHb(String hb, int age) {
+		if(hb.length() == 0)
+			return;
+		double min,max;
+		if(age <= 17) {
+			min = 11.5;
+			max = 15.5;
+		}
+		this.man = forward_question(man, "Does the patient male?");
+		if(this.man) {
+			max = 18;
+			min = 12;
+		}
+		else {
+			max = 16;
+			min = 12;
+		}
+		if(Double.parseDouble(hb) < min) {
+			addRisk(Diseases.anemia,COMMON);
+			addRisk(Diseases.Hematological_disorder,COMMON);
+			addRisk(Diseases.Iron_deficiency,COMMON);
+			addRisk(Diseases.bleeding,COMMON);
+		}
+			
+	}
+	
+	private void checkCreatinie(String creatinie, int age) {
+		if(creatinie.length() == 0)
+			return;
+		double max, min;
+		if(age < 2) {
+			min = 0.2;
+			max = 0.5;
+		}
+		else if(age < 17) {
+			min = 0.5;
+			max = 1;
+		}
+		else if(age < 59) {
+			min = 0.6;
+			max = 1;
+		}
+		else {
+			min = 0.6;
+			max = 1.2;
+		}
+		double val = Double.parseDouble(creatinie);
+		if(val >= min && val <= max)
+			return;
+		if(val > max) {
+			this.Diarrhea = forward_question(Diarrhea, "Does the patient suffer from diarrhea?");
+			if(Diarrhea) {
+				addRisk(Diseases.Kidney_disease,RARE);
+				addRisk(Diseases.Increased_consumption_of_meat,RARE);
+				addRisk(Diseases.Muscle_diseases,RARE);
+			}
+			else {
+				addRisk(Diseases.Kidney_disease,COMMON);
+				addRisk(Diseases.Increased_consumption_of_meat,COMMON);
+				addRisk(Diseases.Muscle_diseases,COMMON);
+			}
+		}
+		else {
+			addRisk(Diseases.Malnutrition,COMMON);
+		}
+		
+	}
+	
+	private void checkIron(String iron) {
+		if(iron.length() == 0)
+			return;
+		int min = 60, max = 160;
+		this.man = forward_question(man, "Does the patient male?");
+		if(this.man) {
+			min *= 0.8;
+		}
+		int val = Integer.parseInt(iron);
+		if(val >= min && val <= max) 
+			return;
+		if(val > max) {
+			addRisk(Diseases.Iron_poisoning,COMMON);
+		}
+		else {
+				this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
+				if(this.pregnant) {
+					addRisk(Diseases.diet,RARE);
+					addRisk(Diseases.bleeding,RARE);
+			}
+				else {
+					addRisk(Diseases.diet,COMMON);
+					addRisk(Diseases.bleeding,COMMON);
+				}
+		}
+		
+	}
+	
+	void checkHDL(String HDL) {
+		if(HDL.length() == 0)
+			return;
+		int min,max;
+		this.man = forward_question(man, "Does the patient male?");
+		if(this.man) {
+			min = 29;
+			max = 62;
+		}
+		else {
+			min = 34;
+			max = 82;
+		}
+		this.ethiopian = forward_question(ethiopian, "Does the patient have ethiopian roots?");
+		if(this.ethiopian) {
+			max *= 1.2;
+		}
+		int val = Integer.parseInt(HDL);
+		if(val < min) {
+			addRisk(Diseases.heart_diseases,COMMON);
+			addRisk(Diseases.Hyperlipidemia,COMMON);
+			addRisk(Diseases.Adult_diabetes,COMMON);
+		}
+		
+	}
+	
+	void checkAP(String AP) {
+		if(AP.length() == 0)
+			return;
+		int min = 30, max = 90;
+		this.NAfrica = forward_question(NAfrica, "Does the patient have oriental roots?");
+		if(this.NAfrica) {
+			min = 60;
+			max = 120;
+		}
+		int val = Integer.parseInt(AP);
+		if(val >= min && val <= max)
+			return;
+		if(val > max) {
+			this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
+			if(!this.pregnant) {
+				addRisk(Diseases.Liver_disease,COMMON);
+				addRisk(Diseases.Diseases_of_the_biliary_tract,COMMON);
+				addRisk(Diseases.Adult_diabetes,COMMON);
+				addRisk(Diseases.Overactive_thyroid_gland,COMMON);
+				addRisk(Diseases.Use_of_various_medications,COMMON);
+			}
+		}
+		else {
+			addRisk(Diseases.diet,COMMON);
+			addRisk(Diseases.Vitamin_deficiency,COMMON);
+		}
+	}
+	
+	
+	
+	
+	
+//	private Boolean Value_range(int val,int max,int min) {
+//		if(val >= min && val <= max)
+//			return null;
+//		if(val < min)
+//			return false;
+//		return true;
+//	}
 	
 	private boolean checkInput() {
 		if(this.dictionary.get("name").getText().length() == 0 ||this.dictionary.get("id").getText().length()==0 || this.dictionary.get("age").getText().length()==0) {
@@ -148,7 +423,7 @@ public class diagnose implements ActionListener {
 				if(key.equals("id") && this.dictionary.get(key).getText().length() != 9)
 					throw new Exception();
 				if(!key.equals("name") && this.dictionary.get(key).getText().length() > 0) {
-					Integer.parseInt(this.dictionary.get(key).getText());
+					Double.parseDouble(this.dictionary.get(key).getText());
 				}
 			}
 			return true;
