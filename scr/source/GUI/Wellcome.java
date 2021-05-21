@@ -34,7 +34,7 @@ public class Wellcome {
 			public void run() {
 				try {
 					//DiagnoseFrame x = new DiagnoseFrame();
-					MainFrame y = new MainFrame("aln");
+					//MainFrame y = new MainFrame("aln");
 					Wellcome window = new Wellcome();
 					window.frame.setVisible(true);
 				} catch (Exception e) {

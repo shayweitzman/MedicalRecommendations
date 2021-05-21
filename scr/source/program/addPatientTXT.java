@@ -12,7 +12,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 
+import javax.swing.JFrame;
+
 import GUI.DiagnoseFrame;
+import GUI.MainFrame;
 
 public class addPatientTXT {
 	private Map<Diseases, Integer> Diagnose;
@@ -21,8 +24,9 @@ public class addPatientTXT {
 	private String patientAge;
 	private String patientID;
 	private String docName;
+	private MainFrame user;
 
-	public addPatientTXT(Map<Diseases, Integer> Diagnose, String docName, Map<String, Boolean> boolsArray,
+	public addPatientTXT(MainFrame user, Map<Diseases, Integer> Diagnose, String docName, Map<String, Boolean> boolsArray,
 			String patientName, String patientID, String patientAge) {
 		this.Diagnose = Diagnose;
 		this.docName = docName;
@@ -30,6 +34,7 @@ public class addPatientTXT {
 		this.patientName = patientName;
 		this.patientID = patientID;
 		this.patientAge = patientAge;
+		this.user = user;
 	}
 
 	public void Write() {
@@ -48,7 +53,7 @@ public class addPatientTXT {
 			e.printStackTrace();
 		}
 		
-		DiagnoseFrame show = new DiagnoseFrame(results,this.patientID);
+		DiagnoseFrame show = new DiagnoseFrame(user, results,this.patientID,this.docName, this.patientName);
 
 	}
 	
@@ -88,12 +93,18 @@ public class addPatientTXT {
 			results.append("No Diagnoses\n");
 		}
 		else {
-			results.append("\nDiagnose High Risk:\n");
-			results.append(HighRisk);
-			results.append("\nDiagnose Medium Risk:\n");
-			results.append(MediumRisk);
-			results.append("\nDiagnose Low Risk:\n");
-			results.append(LowRisk);
+			if(HighRisk.length() > 0) {
+				results.append("\nDiagnose High Risk:\n");
+				results.append(HighRisk);
+			}
+			if(MediumRisk.length() > 0) {
+				results.append("\nDiagnose Medium Risk:\n");
+				results.append(MediumRisk);
+			}
+			if(LowRisk.length() > 0) {
+				results.append("\nDiagnose Low Risk:\n");
+				results.append(LowRisk);
+			}
 		}
 		results.append("-------------------------------------------------------------------\n");
 		return results;

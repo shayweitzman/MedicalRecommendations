@@ -13,11 +13,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import GUI.MainFrame;
+
 public class diagnose implements ActionListener {
 	private Map<String, JTextField> dictionary;
 	private Map<Diseases, Integer> totalDiagnose;
 	private String docName;
-	private JFrame frame;
 	private Boolean smoker = null;
 	private Boolean man = null;
 	private Boolean pregnant = null;
@@ -25,15 +26,18 @@ public class diagnose implements ActionListener {
 	private Boolean ethiopian = null;
 	private Boolean NAfrica = null;
 	private Boolean Diarrhea = null;
+	private JFrame frame;
+	private MainFrame user;
 
 	public static final int COMMON = 3;
 	public static final int RARE = 1;
 
-	public diagnose(JFrame frame, String docName, JTextField name, JTextField PId, JTextField age, JTextField WBC,
+	public diagnose(MainFrame user, JFrame frame, String docName, JTextField name, JTextField PId, JTextField age, JTextField WBC,
 			JTextField neut, JTextField lymph, JTextField Urea, JTextField RBC, JTextField hb, JTextField creatinie,
 			JTextField iron, JTextField HDL, JTextField AP) {
-		this.frame = frame;
+		this.user = user;
 		this.docName = docName;
+		this.frame = frame;
 		this.dictionary = new HashMap<String, JTextField>();
 		dictionary.put("name", name);
 		dictionary.put("id", PId);
@@ -107,9 +111,9 @@ public class diagnose implements ActionListener {
 
 			for (Diseases i : this.totalDiagnose.keySet())
 				System.out.println(i + ": " + this.totalDiagnose.get(i));
-			this.frame.dispose();
+			this.frame.setVisible(false);
 
-			addPatientTXT a = new addPatientTXT(totalDiagnose, docName, new HashMap<String, Boolean>() {
+			addPatientTXT a = new addPatientTXT(user, totalDiagnose, docName, new HashMap<String, Boolean>() {
 				{
 					put("Fever", fever);
 					put("Pregnant", pregnant);

@@ -19,7 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
 
-public class MainFrame {
+public class MainFrame  {
 
 	private String name;
 	private JFrame frame;
@@ -35,13 +35,35 @@ public class MainFrame {
 	private JTextField ironField;
 	private JTextField HDLField;
 	private JTextField APField;
+	private JTextField ageField;
 
 	/**
 	 * Create the application.
 	 */
-	public MainFrame(String userName) {
+	public MainFrame(String userName)  {
 		this.name = userName;
 		initialize();
+	}
+	
+	public static void visible(MainFrame user) {
+		user.cleanPage();
+	}
+	
+	public void cleanPage() {
+		this.nameField.setText("");
+		IdField.setText("");
+		WBCField.setText("");
+		neutField.setText("");
+		lymphField.setText("");
+		UreaField.setText("");
+		RBCField.setText("");
+		hbField.setText("");
+		creatinieField.setText("");
+		ironField.setText("");
+		HDLField.setText("");
+		APField.setText("");
+		ageField.setText("");
+		this.frame.setVisible(true);
 	}
 
 	/**
@@ -112,7 +134,7 @@ public class MainFrame {
 		ageLabel.setBounds(454, 267, 50, 37);
 		frame.getContentPane().add(ageLabel);
 
-		JTextField ageField = new JTextField();
+		ageField = new JTextField();
 		ageField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		ageField.setColumns(10);
 		ageField.setBounds(514, 265, 135, 37);
@@ -231,7 +253,7 @@ public class MainFrame {
 		JButton diagnoseButton = new JButton("diagnose");
 		diagnoseButton.setForeground(Color.WHITE);
 
-		diagnoseButton.addActionListener((ActionListener) new diagnose(frame, this.name,nameField, IdField, ageField, WBCField,
+		diagnoseButton.addActionListener((ActionListener) new diagnose(this,frame, this.name,nameField, IdField, ageField, WBCField,
 				neutField, lymphField, UreaField, RBCField, hbField, creatinieField, ironField, HDLField, APField));
 
 		diagnoseButton.setBackground(new Color(64, 166, 234));
@@ -241,4 +263,6 @@ public class MainFrame {
 		frame.setBounds(100, 100, 673, 611);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
+	
 }
