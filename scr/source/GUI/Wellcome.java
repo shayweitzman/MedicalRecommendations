@@ -1,4 +1,5 @@
 package GUI;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -28,11 +29,11 @@ public class Wellcome {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					//MainFrame x = new MainFrame("aln");
+					// MainFrame x = new MainFrame("aln");
 					Wellcome window = new Wellcome();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -48,11 +49,11 @@ public class Wellcome {
 	public Wellcome() {
 		initialize();
 	}
-	
+
 	public static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
-	    Image img = icon.getImage();  
-	    Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_SMOOTH);  
-	    return new ImageIcon(resizedImage);
+		Image img = icon.getImage();
+		Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight, java.awt.Image.SCALE_SMOOTH);
+		return new ImageIcon(resizedImage);
 	}
 
 	/**
@@ -68,30 +69,31 @@ public class Wellcome {
 		frame.setBounds(100, 100, 780, 409);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JButton SignInButton = new JButton("Sign Up");
-		SignInButton.addActionListener((ActionListener)new SignUpFrame(frame));
-		SignInButton.setBackground(new Color(64,166,234));
+		SignInButton.addActionListener((ActionListener) new SignUpFrame(frame));
+		SignInButton.setBackground(new Color(64, 166, 234));
 		SignInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		SignInButton.setForeground(Color.white);
 		SignInButton.setBounds(50, 266, 302, 83);
 		frame.getContentPane().add(SignInButton);
-		
+
 		JButton LogInButton = new JButton("Login");
-		LogInButton.addActionListener((ActionListener)new LogInFrame(frame));
-		LogInButton.setBackground(new Color(64,166,234));
+		LogInButton.addActionListener((ActionListener) new LogInFrame(frame));
+		LogInButton.setBackground(new Color(64, 166, 234));
 		LogInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		LogInButton.setForeground(Color.white);
 		LogInButton.setBounds(421, 266, 302, 83);
 		frame.getContentPane().add(LogInButton);
-		
-		
-		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//first (1).png");
-		JLabel imagelabel = new JLabel(resizeIcon(image, 300,300));
-		//Image resizedImage = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); 
+
+		ImageIcon image = new ImageIcon(
+				currentRelativePath.toAbsolutePath().toString() + "//source//images//first (1).png");
+		JLabel imagelabel = new JLabel(resizeIcon(image, 300, 300));
+		// Image resizedImage = image.getScaledInstance(50, 50,
+		// java.awt.Image.SCALE_SMOOTH);
 		imagelabel.setBounds(234, -10, 300, 300);
 		frame.add(imagelabel);
-		
+
 //		JLabel lblNewLabel = new JLabel("Wellcome");
 //		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 //		lblNewLabel.setBounds(264, 126, 218, 61);
