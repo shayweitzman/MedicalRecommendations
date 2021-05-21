@@ -50,7 +50,6 @@ public class LogInFrame implements ActionListener {
 		
 		txtUserName = new JTextField("User Name",8);
 		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		//txtUserName.setText("User Name");
 		txtUserName.setBounds(250, 153, 276, 35);
 		Loginframe.getContentPane().add(txtUserName);
 		txtUserName.setColumns(10);

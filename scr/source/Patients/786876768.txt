@@ -1,0 +1,29 @@
+21-05-2021 18:17:00
+Name: asff
+ID: 786876768
+Age: 767
+Treated by: Dr.aln
+Details:
+Smoker	Diarrhea	
+
+Diagnose High Risk:
+	cancer ---> Recommended Treatment: Entrectinib.
+	Disorder of blood formation ---> Recommended Treatment:  10 mg pill of B12 per day for a month
+	5 mg pill of folic acid a day for a month.
+
+Diagnose Medium Risk:
+	Kidney disease ---> Recommended Treatment: Balances blood sugar levels.
+
+Diagnose Low Risk:
+	Lung disease ---> Recommended Treatment: Stop Smoking / Referral for X-ray of the lungs.
+	Muscle diseases ---> Recommended Treatment: two 5 mg pills of Altman's c3 wrapper a day for a month.
+	anemia ---> Recommended Treatment: Two 10 mg B12 pills a day for a month.
+	Viral disease ---> Recommended Treatment: Rest at home.
+	Dehydration ---> Recommended Treatment: Complete lying down rest
+	returning fluids to drinking.
+	Smoker ---> Recommended Treatment: Quit smoking.
+	diet ---> Recommended Treatment: Schedule an appointment with a nutritionist.
+	bleeding ---> Recommended Treatment: Evacuate urgently to the hospital.
+	Infection ---> Recommended Treatment: Dedicated antibiotics.
+	Increased consumption of meat ---> Recommended Treatment: Coordinate an appointment with a nutritionist.
+-------------------------------------------------------------------

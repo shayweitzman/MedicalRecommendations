@@ -91,7 +91,7 @@ public class SignUpFrame implements ActionListener {
 		txtPassword.setBounds(250, 153, 276, 35);
 		SignUpframe.getContentPane().add(txtPassword);
 
-		txtCPassword = new JTextField("Confirm Passowrd");
+		txtCPassword = new JTextField("Confirm Password");
 		txtCPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		// txtUserName.setText("User Name");
 		txtCPassword.setBounds(250, 196, 276, 35);

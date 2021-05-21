@@ -71,7 +71,7 @@ public class addPatientTXT {
 				count++;
 				if (count == 1)
 					results.append("Details:\n");
-				results.append(key + "\t");
+				results.append(key +"\t");
 			}
 		}
 		results.append("\n");
@@ -113,7 +113,4 @@ public class addPatientTXT {
 		
 	}
 	
-//	private void openDiagnoseFrame(String results) {
-//		DiagnoseFrame show = new DiagnoseFrame(results);
-//	}
 }

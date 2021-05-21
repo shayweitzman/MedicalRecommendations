@@ -19,19 +19,18 @@ public class diagnose implements ActionListener {
 	private Map<String, JTextField> dictionary;
 	private Map<Diseases, Integer> totalDiagnose;
 	private String docName;
-	private Boolean smoker = null;
-	private Boolean man = null;
-	private Boolean pregnant = null;
-	private Boolean fever = null;
-	private Boolean ethiopian = null;
-	private Boolean NAfrica = null;
-	private Boolean Diarrhea = null;
+	private Boolean smoker=null;
+	private Boolean man=null;
+	private Boolean pregnant=null;
+	private Boolean fever=null;
+	private Boolean ethiopian=null;
+	private Boolean NAfrica=null;
+	private Boolean Diarrhea=null;
 	private JFrame frame;
 	private MainFrame user;
 
 	public static final int COMMON = 3;
 	public static final int RARE = 1;
-
 	public diagnose(MainFrame user, JFrame frame, String docName, JTextField name, JTextField PId, JTextField age, JTextField WBC,
 			JTextField neut, JTextField lymph, JTextField Urea, JTextField RBC, JTextField hb, JTextField creatinie,
 			JTextField iron, JTextField HDL, JTextField AP) {
@@ -79,6 +78,7 @@ public class diagnose implements ActionListener {
 		totalDiagnose.put(Diseases.Increased_consumption_of_meat, 0);
 		totalDiagnose.put(Diseases.Use_of_various_medications, 0);
 		totalDiagnose.put(Diseases.Malnutrition, 0);
+		
 
 	}
 
@@ -98,6 +98,13 @@ public class diagnose implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (checkInput()) {
+			this.smoker = null;
+			this.man = null;
+			this.pregnant = null;
+			this.fever = null;
+			this.ethiopian = null;
+			this.NAfrica = null;
+			this.Diarrhea = null;
 			checkWBC(this.dictionary.get("WBC").getText(), Integer.parseInt(this.dictionary.get("age").getText()));
 			checkNeut(this.dictionary.get("WBC").getText(), this.dictionary.get("neut").getText());
 			checkLymph(this.dictionary.get("WBC").getText(), this.dictionary.get("lymph").getText());
@@ -193,7 +200,7 @@ public class diagnose implements ActionListener {
 		if (val >= 4.5 && val <= 6)
 			return;
 		if (val > 6) {
-			this.smoker = forward_question(smoker, "Do the patient smoke?");
+			this.smoker = forward_question(smoker, "Does the patient smoke?");
 			if (this.smoker)
 				addRisk(Diseases.Smoker, COMMON);
 			addRisk(Diseases.Disorder_of_blood_formation, COMMON);
@@ -400,7 +407,7 @@ public class diagnose implements ActionListener {
 	private boolean checkInput() {
 		if (this.dictionary.get("name").getText().length() == 0 || this.dictionary.get("id").getText().length() == 0
 				|| this.dictionary.get("age").getText().length() == 0) {
-			JOptionPane.showMessageDialog(this.frame, "patient mast have at least age name and id", "Warning",
+			JOptionPane.showMessageDialog(this.frame, "Patient must have at least Age, Name and ID", "Warning",
 					JOptionPane.WARNING_MESSAGE);
 			return false;
 		}

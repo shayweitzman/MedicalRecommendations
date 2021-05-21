@@ -1,4 +1,4 @@
-package GUI;
+ package GUI;
 
 import java.awt.EventQueue;
 
@@ -63,7 +63,7 @@ public class Wellcome {
 	private void initialize() {
 		Path currentRelativePath = Paths.get("");
 		frame = new JFrame();
-		frame.setTitle("Wellcome");
+		frame.setTitle("Welcome");
 		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
 		frame.setIconImage(img.getImage());
 		frame.getContentPane().setBackground(Color.WHITE);
@@ -90,15 +90,9 @@ public class Wellcome {
 		ImageIcon image = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//first (1).png");
 		JLabel imagelabel = new JLabel(resizeIcon(image, 300, 300));
-		// Image resizedImage = image.getScaledInstance(50, 50,
-		// java.awt.Image.SCALE_SMOOTH);
 		imagelabel.setBounds(234, -10, 300, 300);
 		frame.add(imagelabel);
 
-//		JLabel lblNewLabel = new JLabel("Wellcome");
-//		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
-//		lblNewLabel.setBounds(264, 126, 218, 61);
-//		frame.getContentPane().add(lblNewLabel);
 	}
 
 }

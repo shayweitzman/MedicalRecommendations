@@ -43,8 +43,7 @@ public class Database {
 			{
 				System.out.println(line);
 				String[] l = line.split(splitBy); // use comma as separator
-				System.out.println(
-						"Employee [First Name=" + l[0] + ", Last Name=" + l[1] + ", Designation=" + l[2] + "]");
+				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -64,17 +63,17 @@ public class Database {
 				if (l[0].equals(this.docID)) {
 					if(l[1].equals(this.username)) {
 						if(l[2].equals(this.password)) {
-							return "success";
+							return "Login Success";
 						}
-						return "wornd password";
+						return "Wrong Password";
 					}
-					return "wornd user name";
+					return "Wrong Username";
 				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return  "this Id des'nt exsis";
+		return  "This ID Doesn't Exists";
 	}
 	
 	private boolean isExist(String s1, int index) {

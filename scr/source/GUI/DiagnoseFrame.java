@@ -20,6 +20,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.border.Border;
 import javax.swing.JTextArea;
 import javax.swing.JScrollBar;
 
@@ -69,6 +70,8 @@ public class DiagnoseFrame implements ActionListener {
 		ImageIcon logOut = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//logOut.png");
 		JButton logOutButton = new JButton(Wellcome.resizeIcon(logOut, 50, 50));
+		Border emptyBorder = BorderFactory.createEmptyBorder();
+		logOutButton.setBorder(emptyBorder);
 		logOutButton.setToolTipText("Log Out");
 		logOutButton.setBackground(Color.white);
 		logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 25));

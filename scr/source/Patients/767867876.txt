@@ -1,0 +1,32 @@
+21-05-2021 17:53:04
+Name: srqwr
+ID: 767867876
+Age: 4
+Treated by: Dr.shaywe33
+Details:
+Pregnant	Smoker	
+
+Diagnose High Risk:
+	Lung disease ---> Recommended Treatment: Stop Smoking / Referral for X-ray of the lungs.
+	Dehydration ---> Recommended Treatment: Complete lying down rest
+	returning fluids to drinking.
+	bleeding ---> Recommended Treatment: Evacuate urgently to the hospital.
+	Disorder of blood formation ---> Recommended Treatment:  10 mg pill of B12 per day for a month
+	5 mg pill of folic acid a day for a month.
+	anemia ---> Recommended Treatment: Two 10 mg B12 pills a day for a month.
+	Smoker ---> Recommended Treatment: Quit smoking.
+	Kidney disease ---> Recommended Treatment: Balances blood sugar levels.
+	Muscle diseases ---> Recommended Treatment: two 5 mg pills of Altman's c3 wrapper a day for a month.
+	diet ---> Recommended Treatment: Schedule an appointment with a nutritionist.
+	Infection ---> Recommended Treatment: Dedicated antibiotics.
+	Viral disease ---> Recommended Treatment: Rest at home.
+	Increased consumption of meat ---> Recommended Treatment: Coordinate an appointment with a nutritionist.
+	cancer ---> Recommended Treatment: Entrectinib.
+
+Diagnose Low Risk:
+	heart diseases ---> Recommended Treatment: Schedule an appointment with a nutritionist.
+	Hyperlipidemia ---> Recommended Treatment: Arrange a meeting with a nutritionist 
+	5 mg pill of Simobil daily for a week.
+	Iron poisoning ---> Recommended Treatment: Evacuate to the hospital.
+	Adult diabetes ---> Recommended Treatment: Insulin adjustment for patient.
+-------------------------------------------------------------------

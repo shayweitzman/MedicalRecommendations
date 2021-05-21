@@ -12,9 +12,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 
 import program.diagnose;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
@@ -72,7 +74,7 @@ public class MainFrame  {
 	private void initialize() {
 		Path currentRelativePath = Paths.get("");
 		frame = new JFrame();
-		frame.setTitle("Patient Details");
+		frame.setTitle("Patient's Details");
 		ImageIcon icon = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
 		frame.setIconImage(icon.getImage());
 		frame.getContentPane().setBackground(Color.WHITE);
@@ -85,6 +87,8 @@ public class MainFrame  {
 		logOutButton.setToolTipText("Log Out");
 		logOutButton.setBackground(Color.white);
 		logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		Border emptyBorder = BorderFactory.createEmptyBorder();
+		logOutButton.setBorder(emptyBorder);
 		logOutButton.addActionListener(new ActionListener() {
 
 			@Override
@@ -250,7 +254,7 @@ public class MainFrame  {
 		APField.setBounds(263, 488, 120, 37);
 		frame.getContentPane().add(APField);
 
-		JButton diagnoseButton = new JButton("diagnose");
+		JButton diagnoseButton = new JButton("Diagnose");
 		diagnoseButton.setForeground(Color.WHITE);
 
 		diagnoseButton.addActionListener((ActionListener) new diagnose(this,frame, this.name,nameField, IdField, ageField, WBCField,

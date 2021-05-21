@@ -1,0 +1,25 @@
+21-05-2021 17:54:00
+Name: njnj
+ID: 234234444
+Age: 6
+Treated by: Dr.shaywe33
+Details:
+Diarrhea	
+
+Diagnose Medium Risk:
+	Kidney disease ---> Recommended Treatment: Balances blood sugar levels.
+	cancer ---> Recommended Treatment: Entrectinib.
+
+Diagnose Low Risk:
+	Dehydration ---> Recommended Treatment: Complete lying down rest
+	returning fluids to drinking.
+	bleeding ---> Recommended Treatment: Evacuate urgently to the hospital.
+	Disorder of blood formation ---> Recommended Treatment:  10 mg pill of B12 per day for a month
+	5 mg pill of folic acid a day for a month.
+	anemia ---> Recommended Treatment: Two 10 mg B12 pills a day for a month.
+	Muscle diseases ---> Recommended Treatment: two 5 mg pills of Altman's c3 wrapper a day for a month.
+	diet ---> Recommended Treatment: Schedule an appointment with a nutritionist.
+	Infection ---> Recommended Treatment: Dedicated antibiotics.
+	Viral disease ---> Recommended Treatment: Rest at home.
+	Increased consumption of meat ---> Recommended Treatment: Coordinate an appointment with a nutritionist.
+-------------------------------------------------------------------

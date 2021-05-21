@@ -19,7 +19,7 @@ public abstract class Form {
 	
 	protected boolean checkUserName(String userName) {
 		if(userName.length() < 6 || userName.length() > 8) {
-			JOptionPane.showMessageDialog(SignUpframe, "User name must be between 6 and 8 characters","Warning", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(SignUpframe, "Username must be between 6 - 8 characters","Warning", JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
 		int count =0;
@@ -27,12 +27,12 @@ public abstract class Form {
 			if(Character.isDigit(userName.charAt(i)))
 				count++;
 			else if(!Character.isLetter(userName.charAt(i))) {
-				JOptionPane.showMessageDialog(SignUpframe, "User name must contain letters and numbers only","Warning", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(SignUpframe, "Username can contain letters and numbers only","Warning", JOptionPane.WARNING_MESSAGE);
 				return false;
 			}
 		}
 		if(count > 2) {
-			JOptionPane.showMessageDialog(SignUpframe, "User name must contain 2 digits max","Warning", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(SignUpframe, "Username must contain 2 digits max","Warning", JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
 		return true;
@@ -58,7 +58,7 @@ public abstract class Form {
 	
 	protected boolean checkPassword(String password) {
 		if(password.length() < 8 || password.length() > 10) {
-			JOptionPane.showMessageDialog(SignUpframe, "password must be between 8 and 10 characters","Warning", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(SignUpframe, "Password must be between 8 - 10 characters","Warning", JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
 		int letter=0,special=0,digit=0;
@@ -71,7 +71,7 @@ public abstract class Form {
 				special++;
 		}
 		if(letter < 1 || digit < 1 || special < 1) {
-			JOptionPane.showMessageDialog(SignUpframe, "password must be contain at least one letter, digit amd special chrecter","Warning", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(SignUpframe, "Password must contain at least one letter, digit and special characters","Warning", JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
 		return true;

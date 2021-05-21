@@ -26,7 +26,7 @@ public class LogIn extends Form implements ActionListener {
 		if (valid) {
 			Database db = new Database(txtUserName.getText(), txtPassword.getText(), this.txtId.getText());
 			String msg = db.isUserExist();
-			if (msg == "success") {
+			if (msg == "Login Success") {
 				this.SignUpframe.dispose();
 				MainFrame main = new MainFrame(txtUserName.getText());
 			} else {
