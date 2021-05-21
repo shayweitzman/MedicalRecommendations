@@ -1,0 +1,27 @@
+21-05-2021 17:08:58
+Name: jalke
+ID: 333134155
+Age: 43
+Treated by: Dr.yinon21
+Details:
+Smoker	
+
+Diagnose High Risk:
+	Kidney disease  Recommended Treatment: Balances blood sugar levels.
+	Disorder of blood formation  Recommended Treatment:  10 mg pill of B12 per day for a month
+5 mg pill of folic acid a day for a month.
+
+Diagnose Low Risk:
+	Lung disease  Recommended Treatment: Stop Smoking / Referral for X-ray of the lungs.
+	Infection  Recommended Treatment: Dedicated antibiotics.
+	cancer  Recommended Treatment: Entrectinib.
+	bleeding  Recommended Treatment: Evacuate urgently to the hospital.
+	anemia  Recommended Treatment: Two 10 mg B12 pills a day for a month.
+	Muscle diseases  Recommended Treatment: two 5 mg pills of Altman's c3 wrapper a day for a month.
+	diet  Recommended Treatment: Schedule an appointment with a nutritionist.
+	Dehydration  Recommended Treatment: Complete lying down rest
+returning fluids to drinking.
+	Increased consumption of meat  Recommended Treatment: Coordinate an appointment with a nutritionist.
+	Viral disease  Recommended Treatment: Rest at home.
+	Smoker  Recommended Treatment: Quit smoking.
+-------------------------------------------------------------------

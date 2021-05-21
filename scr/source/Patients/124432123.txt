@@ -1,0 +1,29 @@
+21-05-2021 17:03:35
+Name: jk
+ID: 124432123
+Age: 43
+Treated by: Dr.yinon21
+Details:
+Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+	Kidney disease
+
+Diagnose Low Risk:
+	Lung disease
+	Infection
+	cancer
+	bleeding
+	Adult diabetes
+	Hyperlipidemia
+	anemia
+	Muscle diseases
+	diet
+	heart diseases
+	Dehydration
+	Increased consumption of meat
+	Viral disease
+-------------------------------------------------------------------

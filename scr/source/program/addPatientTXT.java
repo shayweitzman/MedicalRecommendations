@@ -25,11 +25,13 @@ public class addPatientTXT {
 	private String patientID;
 	private String docName;
 	private MainFrame user;
+	private Treatments personalTreatment;
 
-	public addPatientTXT(MainFrame user, Map<Diseases, Integer> Diagnose, String docName, Map<String, Boolean> boolsArray,
+	public addPatientTXT(MainFrame user,Treatments personalTreatment ,Map<Diseases, Integer> Diagnose, String docName, Map<String, Boolean> boolsArray,
 			String patientName, String patientID, String patientAge) {
 		this.Diagnose = Diagnose;
 		this.docName = docName;
+		this.personalTreatment=personalTreatment;
 		this.boolsArray = boolsArray;
 		this.patientName = patientName;
 		this.patientID = patientID;
@@ -79,13 +81,13 @@ public class addPatientTXT {
 		boolean Healthy = true;
 		for (Diseases d : Diagnose.keySet()) {
 			if (Diagnose.get(d) >= 5) {
-				HighRisk.append("\t" + d.toString().replaceAll("_", " ") + "\n");
+				HighRisk.append("\t" + d.toString().replaceAll("_", " ") +" ---> Recommended Treatment: "+personalTreatment.personalTreatment.get(d) +"\n");
 				Healthy = false;
 			} else if (Diagnose.get(d) > 3) {
-				MediumRisk.append("\t" + d.toString().replaceAll("_", " ") + "\n");
+				MediumRisk.append("\t" + d.toString().replaceAll("_", " ") +" ---> Recommended Treatment: "+personalTreatment.personalTreatment.get(d) + "\n");
 				Healthy = false;
 			} else if (Diagnose.get(d) > 0) {
-				LowRisk.append("\t" + d.toString().replaceAll("_", " ") + "\n");
+				LowRisk.append("\t" + d.toString().replaceAll("_", " ") +" ---> Recommended Treatment: "+personalTreatment.personalTreatment.get(d) + "\n");
 				Healthy = false;
 			} 
 		}

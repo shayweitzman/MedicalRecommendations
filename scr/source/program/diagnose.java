@@ -112,8 +112,8 @@ public class diagnose implements ActionListener {
 			for (Diseases i : this.totalDiagnose.keySet())
 				System.out.println(i + ": " + this.totalDiagnose.get(i));
 			this.frame.setVisible(false);
-
-			addPatientTXT a = new addPatientTXT(user, totalDiagnose, docName, new HashMap<String, Boolean>() {
+			Treatments personalTreatment = new Treatments(totalDiagnose);
+			addPatientTXT a = new addPatientTXT(user,personalTreatment,totalDiagnose, docName, new HashMap<String, Boolean>() {
 				{
 					put("Fever", fever);
 					put("Pregnant", pregnant);
