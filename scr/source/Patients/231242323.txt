@@ -1,0 +1,19 @@
+21-05-2021 14:53:29
+Name: ds
+ID: 231242323
+Age: 2
+Treated by: Dr.aln
+
+
+Diagnose High Risk:
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Infection
+	anemia
+	Viral disease
+	Disorder of blood formation
+-------------------------------------------------------------------

@@ -229,6 +229,7 @@ public class MainFrame {
 		frame.getContentPane().add(APField);
 
 		JButton diagnoseButton = new JButton("diagnose");
+		diagnoseButton.setForeground(Color.WHITE);
 
 		diagnoseButton.addActionListener((ActionListener) new diagnose(frame, this.name,nameField, IdField, ageField, WBCField,
 				neutField, lymphField, UreaField, RBCField, hbField, creatinieField, ironField, HDLField, APField));

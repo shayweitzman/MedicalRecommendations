@@ -1,0 +1,10 @@
+21-05-2021 13:18:12
+Age: 23
+Treated by: Dr.yinon21
+
+Diagnoses: 
+Diagnose Low Risk: Disorder_of_blood_formation
+Diagnose Low Risk: cancer
+Diagnose Low Risk: Infection
+Diagnose Low Risk: Viral_disease
+-------------------------------------------------------------------

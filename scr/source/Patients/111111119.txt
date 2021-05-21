@@ -1,0 +1,466 @@
+21-05-2021 14:08:21
+Name: asd
+ID: 111111119
+Age: 23
+Treated by: Dr.aln
+Details:
+Diarrhea	
+Diagnose High Risk:
+anemia
+Disorder_of_blood_formation
+bleeding
+diet
+Diagnose Medium Risk:
+Kidney_disease
+Diagnose Low Risk:
+Infection
+Viral_disease
+Dehydration
+Increased_consumption_of_meat
+Muscle_diseases
+cancer
+-------------------------------------------------------------------
+21-05-2021 14:13:19
+Name: asd
+ID: 111111119
+Age: 23
+Treated by: Dr.aln
+Details:
+Pregnant	Smoker	Diarrhea	
+Diagnose High Risk:
+	Disorder_of_blood_formation
+Diagnose Medium Risk:
+	bleeding
+Diagnose Low Risk:
+	Kidney_disease
+	Infection
+	Malnutrition
+	Lung_disease
+	anemia
+	Viral_disease
+	Smoker
+	diet
+	Liver_disease
+	Increased_consumption_of_meat
+	Muscle_diseases
+	cancer
+-------------------------------------------------------------------
+21-05-2021 14:16:14
+Name: asd
+ID: 111111119
+Age: 23
+Treated by: Dr.aln
+Details:
+Pregnant	Smoker	Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+	Kidney disease
+	bleeding
+	diet
+
+Diagnose Low Risk:
+	Infection
+	Lung disease
+	anemia
+	Viral disease
+	Smoker
+	Dehydration
+	Increased consumption of meat
+	Muscle diseases
+	cancer
+-------------------------------------------------------------------
+21-05-2021 14:29:30
+Name: asd
+ID: 111111119
+Age: 24
+Treated by: Dr.aln
+Details:
+Smoker	Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+	Kidney disease
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Increased consumption of meat
+	Smoker
+	Hyperlipidemia
+	heart diseases
+	Muscle diseases
+	Infection
+	anemia
+	Dehydration
+	diet
+	Viral disease
+	Adult diabetes
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:31:13
+Name: asd
+ID: 111111119
+Age: 24
+Treated by: Dr.aln
+Details:
+Smoker	Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+	Kidney disease
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Increased consumption of meat
+	Smoker
+	Muscle diseases
+	Infection
+	anemia
+	Dehydration
+	diet
+	Viral disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:32:20
+Name: asd
+ID: 111111119
+Age: 25
+Treated by: Dr.aln
+Details:
+Pregnant	Smoker	Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+	bleeding
+	diet
+	Kidney disease
+
+Diagnose Low Risk:
+	cancer
+	Increased consumption of meat
+	Smoker
+	Muscle diseases
+	Infection
+	anemia
+	Dehydration
+	Viral disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:33:21
+Name: asd
+ID: 111111119
+Age: 25
+Treated by: Dr.aln
+Details:
+Pregnant	Smoker	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+	bleeding
+	diet
+
+Diagnose Low Risk:
+	cancer
+	Smoker
+	Hyperlipidemia
+	heart diseases
+	Infection
+	anemia
+	Dehydration
+	Viral disease
+	Kidney disease
+	Adult diabetes
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:38:49
+Name: asd
+ID: 111111119
+Age: 25
+Treated by: Dr.aln
+Details:
+Pregnant	Smoker	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+	bleeding
+
+Diagnose Low Risk:
+	cancer
+	Smoker
+	Infection
+	anemia
+	diet
+	Viral disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:41:43
+Name: asd
+ID: 111111119
+Age: 25
+Treated by: Dr.aln
+Details:
+Pregnant	Smoker	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+	bleeding
+	diet
+
+Diagnose Low Risk:
+	cancer
+	Smoker
+	Infection
+	anemia
+	Dehydration
+	Viral disease
+	Kidney disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:43:25
+Name: asd
+ID: 111111119
+Age: 25
+Treated by: Dr.aln
+Details:
+Smoker	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Smoker
+	Infection
+	anemia
+	Viral disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:44:59
+Name: asd
+ID: 111111119
+Age: 26
+Treated by: Dr.aln
+Details:
+Smoker	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Smoker
+	Infection
+	anemia
+	Viral disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:46:43
+Name: asd
+ID: 111111119
+Age: 26
+Treated by: Dr.aln
+Details:
+Pregnant	Smoker	Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Increased consumption of meat
+	Smoker
+	Muscle diseases
+	Malnutrition
+	Infection
+	anemia
+	Liver disease
+	diet
+	Viral disease
+	Kidney disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 14:49:15
+Name: as
+ID: 111111119
+Age: 23
+Treated by: Dr.aln
+Details:
+Pregnant	Diarrhea	
+
+Diagnose High Risk:
+
+Diagnose Medium Risk:
+	bleeding
+
+Diagnose Low Risk:
+	Increased consumption of meat
+	Muscle diseases
+	anemia
+	diet
+	Kidney disease
+-------------------------------------------------------------------
+21-05-2021 15:01:40
+Name: asd
+ID: 111111119
+Age: 26
+Treated by: Dr.aln
+Details:
+Smoker	Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Increased consumption of meat
+	Smoker
+	Hyperlipidemia
+	heart diseases
+	Muscle diseases
+	Infection
+	anemia
+	Viral disease
+	Kidney disease
+	Adult diabetes
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 15:04:28
+Name: asd
+ID: 111111119
+Age: 23
+Treated by: Dr.aln
+Details:
+Smoker	Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Increased consumption of meat
+	Smoker
+	Muscle diseases
+	Infection
+	anemia
+	Viral disease
+	Kidney disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 15:26:26
+Name: sad
+ID: 111111119
+Age: 32
+Treated by: Dr.aln
+Details:
+Smoker	Diarrhea	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Increased consumption of meat
+	Smoker
+	Muscle diseases
+	Infection
+	anemia
+	Viral disease
+	Kidney disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 15:27:45
+Name: dsa
+ID: 111111119
+Age: 45
+Treated by: Dr.aln
+Details:
+Smoker	
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	bleeding
+	Smoker
+	Infection
+	anemia
+	Viral disease
+	Lung disease
+-------------------------------------------------------------------
+21-05-2021 15:29:35
+Name: sad
+ID: 111111119
+Age: 35
+Treated by: Dr.aln
+
+
+Diagnose High Risk:
+	Disorder of blood formation
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	cancer
+	Infection
+	Dehydration
+	diet
+	Viral disease
+	Kidney disease
+-------------------------------------------------------------------
+21-05-2021 15:31:08
+Name: asd
+ID: 111111119
+Age: 324
+Treated by: Dr.aln
+Details:
+Smoker	Diarrhea	
+
+Diagnose High Risk:
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	Increased consumption of meat
+	Smoker
+	Muscle diseases
+	Kidney disease
+	Disorder of blood formation
+	Lung disease
+-------------------------------------------------------------------

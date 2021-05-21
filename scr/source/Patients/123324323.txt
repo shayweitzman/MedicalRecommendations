@@ -1,0 +1,17 @@
+21-05-2021 14:54:59
+Name: ds
+ID: 123324323
+Age: 23
+Treated by: Dr.aln
+Details:
+Smoker	
+
+Diagnose High Risk:
+
+Diagnose Medium Risk:
+
+Diagnose Low Risk:
+	Smoker
+	Disorder of blood formation
+	Lung disease
+-------------------------------------------------------------------
