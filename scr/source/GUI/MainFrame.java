@@ -102,7 +102,7 @@ public class MainFrame  {
 
 		JLabel docNameLabel = new JLabel("Hello " + this.name);
 		docNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		docNameLabel.setBounds(0, 0, 180, 37);
+		docNameLabel.setBounds(0, 0, 220, 37);
 		frame.getContentPane().add(docNameLabel);
 
 		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//forth.png");

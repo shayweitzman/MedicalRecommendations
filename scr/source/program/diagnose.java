@@ -105,6 +105,9 @@ public class diagnose implements ActionListener {
 			this.ethiopian = null;
 			this.NAfrica = null;
 			this.Diarrhea = null;
+			for(Diseases i : this.totalDiagnose.keySet()) {
+				this.totalDiagnose.put(i, 0);
+			}
 			checkWBC(this.dictionary.get("WBC").getText(), Integer.parseInt(this.dictionary.get("age").getText()));
 			checkNeut(this.dictionary.get("WBC").getText(), this.dictionary.get("neut").getText());
 			checkLymph(this.dictionary.get("WBC").getText(), this.dictionary.get("lymph").getText());
@@ -122,10 +125,14 @@ public class diagnose implements ActionListener {
 			Treatments personalTreatment = new Treatments(totalDiagnose);
 			addPatientTXT a = new addPatientTXT(user,personalTreatment,totalDiagnose, docName, new HashMap<String, Boolean>() {
 				{
-					put("Fever", fever);
-					put("Pregnant", pregnant);
-					put("Smoker", smoker);
-					put("Diarrhea", Diarrhea);
+					if(fever != null)
+						put("Fever", fever);
+					if(pregnant != null)
+						put("Pregnant", pregnant);
+					if(smoker != null)
+						put("Smoker", smoker);
+					if(Diarrhea != null)
+						put("Diarrhea", Diarrhea);
 				}
 			}, dictionary.get("name").getText(), dictionary.get("id").getText(), dictionary.get("age").getText());
 			a.Write();

@@ -67,11 +67,11 @@ public class addPatientTXT {
 		results.append("Name: " + patientName + "\nID: " + patientID + "\n" + "Age: " + patientAge + "\n" + "Treated by: Dr." + docName + "\n");
 		int count = 0;
 		for (String key : boolsArray.keySet()) {
-			if (boolsArray.get(key) != null && boolsArray.get(key)) {
+			if(boolsArray.get(key)) {
 				count++;
 				if (count == 1)
 					results.append("Details:\n");
-				results.append(key +"\t");
+				results.append(key +"  ");
 			}
 		}
 		results.append("\n");

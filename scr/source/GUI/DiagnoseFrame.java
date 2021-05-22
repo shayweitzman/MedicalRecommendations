@@ -51,6 +51,9 @@ public class DiagnoseFrame implements ActionListener {
 	private void initialize() {
 		Path currentRelativePath = Paths.get("");
 		frame = new JFrame();
+		frame.setTitle("Patient's Diagnose");
+		ImageIcon icon = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
+		frame.setIconImage(icon.getImage());
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setLayout(null);
 
@@ -63,8 +66,8 @@ public class DiagnoseFrame implements ActionListener {
 		frame.getContentPane().add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Hello " + this.docName);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel_1.setBounds(0, 0, 195, 50);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblNewLabel_1.setBounds(0, 0, 274, 50);
 		frame.getContentPane().add(lblNewLabel_1);
 
 		ImageIcon logOut = new ImageIcon(
