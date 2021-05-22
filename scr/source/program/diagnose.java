@@ -16,8 +16,8 @@ import javax.swing.JTextField;
 import GUI.MainFrame;
 
 public class diagnose implements ActionListener {
-	private Map<String, JTextField> dictionary;
-	private Map<Diseases, Integer> totalDiagnose;
+	public Map<String, JTextField> dictionary;
+	public Map<Diseases, Integer> totalDiagnose;
 	private String docName;
 	private Boolean smoker=null;
 	private Boolean man=null;
@@ -31,6 +31,13 @@ public class diagnose implements ActionListener {
 
 	public static final int COMMON = 3;
 	public static final int RARE = 1;
+	public diagnose() {
+		this.dictionary = new HashMap<String, JTextField>();
+		this.totalDiagnose = new HashMap<Diseases, Integer>();
+		totalDiagnose.put(Diseases.Infection, 0);
+		totalDiagnose.put(Diseases.Disorder_of_blood_formation, 0);
+		totalDiagnose.put(Diseases.cancer, 0);
+	};
 	public diagnose(MainFrame user, JFrame frame, String docName, JTextField name, JTextField PId, JTextField age, JTextField WBC,
 			JTextField neut, JTextField lymph, JTextField Urea, JTextField RBC, JTextField hb, JTextField creatinie,
 			JTextField iron, JTextField HDL, JTextField AP) {
@@ -171,10 +178,10 @@ public class diagnose implements ActionListener {
 		}
 	}
 
-	private void checkNeut(String WBC, String neut) {
+	public void checkNeut(String WBC, String neut) {
 		if (WBC.length() == 0 || neut.length() == 0 || Double.parseDouble(WBC) == 0)
 			return;
-		double precent = Double.parseDouble(neut) / Double.parseDouble(WBC);
+		double precent = (Double.parseDouble(neut) / Double.parseDouble(WBC))*100;
 		if (precent >= 28 && precent <= 54)
 			return;
 		if (precent < 28) {
@@ -188,7 +195,7 @@ public class diagnose implements ActionListener {
 	private void checkLymph(String WBC, String Lymph) {
 		if (WBC.length() == 0 || Lymph.length() == 0 || Double.parseDouble(WBC) == 0)
 			return;
-		double precent = Double.parseDouble(Lymph) / Double.parseDouble(WBC);
+		double precent = (Double.parseDouble(Lymph) / Double.parseDouble(WBC))*100;
 		if (precent >= 36 && precent <= 52)
 			return;
 		if (precent < 36)
@@ -221,7 +228,7 @@ public class diagnose implements ActionListener {
 	private void checkHCT(String RBC, String WBC) {
 		if (WBC.length() == 0 || RBC.length() == 0 || Double.parseDouble(WBC) == 0)
 			return;
-		double precent = Double.parseDouble(RBC) / (Double.parseDouble(WBC) + Double.parseDouble(RBC));
+		double precent = (Double.parseDouble(RBC) / (Double.parseDouble(WBC) + Double.parseDouble(RBC)))*100;
 		this.man = forward_question(man, "Does the patient male?");
 		double max, min;
 		if (this.man) {
@@ -411,7 +418,7 @@ public class diagnose implements ActionListener {
 		}
 	}
 
-	private boolean checkInput() {
+	public boolean checkInput() {
 		if (this.dictionary.get("name").getText().length() == 0 || this.dictionary.get("id").getText().length() == 0
 				|| this.dictionary.get("age").getText().length() == 0) {
 			JOptionPane.showMessageDialog(this.frame, "Patient must have at least Age, Name and ID", "Warning",
