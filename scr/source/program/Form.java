@@ -17,6 +17,34 @@ public abstract class Form {
 		this.txtId = txtId;
 	}
 	
+	protected boolean checkFirstName(String firstName) {
+		if(firstName.length() < 1 || firstName.length() >13) {
+			JOptionPane.showMessageDialog(SignUpframe, "First name must be between 2 - 13 characters","Warning", JOptionPane.WARNING_MESSAGE);
+			return false;
+		}
+		for(int i=0;i<firstName.length();i++) {
+			if(!Character.isLetter(firstName.charAt(i))) {
+				JOptionPane.showMessageDialog(SignUpframe, "First Name can contain letters only","Warning", JOptionPane.WARNING_MESSAGE);
+				return false;
+			}
+		}
+		return true;
+
+	}
+	protected boolean checkLastName(String lastName) {
+		if(lastName.length() < 1 || lastName.length() >13) {
+			JOptionPane.showMessageDialog(SignUpframe, "Last name must be between 2 - 13 characters","Warning", JOptionPane.WARNING_MESSAGE);
+			return false;
+		}
+		for(int i=0;i<lastName.length();i++) {
+			if(!Character.isLetter(lastName.charAt(i))) {
+				JOptionPane.showMessageDialog(SignUpframe, "Last Name can contain letters only","Warning", JOptionPane.WARNING_MESSAGE);
+				return false;
+			}
+		}
+		return true;
+
+	}
 	protected boolean checkUserName(String userName) {
 		if(userName.length() < 6 || userName.length() > 8) {
 			JOptionPane.showMessageDialog(SignUpframe, "Username must be between 6 - 8 characters","Warning", JOptionPane.WARNING_MESSAGE);

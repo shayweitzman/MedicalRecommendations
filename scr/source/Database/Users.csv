@@ -1,10 +1,3 @@
-ID,UserName,Password
-123456789,dolevop,dolevo1%6
-208901504,dolev31,dolev3101#
-123321123,yinon21,123aaa##
-123456765,shaywe12,qwerty12#
-111222333,dolev12,qwerty12#
-123321124,yinon22,123aaa##
-111666333,shaywe64,123asd##
-777777777,shaywe33,123aaa##
-555444788,shayc4,123aaa##
+ID,Username,Password,First Name,Last Name
+555444333,yinno43,123aaa##
+555444222,shaywe12,123aaa##

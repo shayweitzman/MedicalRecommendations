@@ -12,22 +12,30 @@ import GUI.Wellcome;
 
 public class SignUp extends Form implements ActionListener {
 	private JTextField txtCPassword;
+	/*
+	private JTextField txtFirstName;
+	private JTextField txtLastName;*/
 
-	public SignUp(JFrame SignUpframe, JTextField txtUserName, JTextField txtPassword, JTextField txtId,
+	public SignUp(JFrame SignUpframe,/* JTextField txtFirstName,JTextField txtLastName,*/JTextField txtUserName, JTextField txtPassword, JTextField txtId,
 			JTextField txtCPassword) {
 		super(SignUpframe, txtUserName, txtPassword, txtId);
 		this.txtCPassword = txtCPassword;
+		/*this.txtFirstName = txtFirstName;
+		this.txtLastName = txtLastName;*/
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		boolean valid = true;
+		/*valid = checkFirstName(txtFirstName.getText()) && valid;
+		valid = checkLastName(txtLastName.getText()) && valid;*/
 		valid = checkUserName(txtUserName.getText()) && valid;
 		valid = checkPassword(txtPassword.getText()) && valid;
 		valid = checkConfirmPassword(txtPassword.getText(), txtCPassword.getText()) && valid;
 		valid = checkID(this.txtId.getText()) && valid;
 		if (valid) {
-			Database db = new Database(txtUserName.getText(), txtPassword.getText(), this.txtId.getText());
+			Database db = new Database(/*txtFirstName.getText(), txtLastName.getText(),*/txtUserName.getText(), txtPassword.getText(), this.txtId.getText());
 			String msg = db.Write();
 
 			if (msg.equals("Signed Up Successfully")) {
