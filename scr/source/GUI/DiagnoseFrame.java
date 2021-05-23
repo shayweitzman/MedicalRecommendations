@@ -60,7 +60,7 @@ public class DiagnoseFrame implements ActionListener {
 
 		ImageIcon img = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//fifth.png");
-		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(img, 200, 200));
+		JLabel lblNewLabel = new JLabel(Welcome.resizeIcon(img, 200, 200));
 		//JLabel lblNewLabel = new JLabel("image");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel.setBounds(220, -10, 200, 200);
@@ -73,7 +73,7 @@ public class DiagnoseFrame implements ActionListener {
 
 		ImageIcon logOut = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//logOut.png");
-		JButton logOutButton = new JButton(Wellcome.resizeIcon(logOut, 50, 50));
+		JButton logOutButton = new JButton(Welcome.resizeIcon(logOut, 50, 50));
 		Border emptyBorder = BorderFactory.createEmptyBorder();
 		logOutButton.setBorder(emptyBorder);
 		logOutButton.setToolTipText("Log Out");
@@ -84,7 +84,7 @@ public class DiagnoseFrame implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				Wellcome.frame.setVisible(true);
+				Welcome.frame.setVisible(true);
 			}
 		});
 		logOutButton.setBounds(609, 0, 50, 50);

@@ -356,7 +356,7 @@ public class diagnose implements ActionListener {
 		} else {
 			this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
 			if (this.pregnant) {
-				addRisk(Diseases.diet, RARE);
+				addRisk(Diseases.diet, RARE);  
 				addRisk(Diseases.bleeding, RARE);
 			} else {
 				addRisk(Diseases.diet, COMMON);

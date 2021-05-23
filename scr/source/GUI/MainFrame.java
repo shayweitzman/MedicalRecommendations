@@ -83,7 +83,7 @@ public class MainFrame  {
 
 		ImageIcon logOut = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//logOut.png");
-		JButton logOutButton = new JButton(Wellcome.resizeIcon(logOut, 50, 50));
+		JButton logOutButton = new JButton(Welcome.resizeIcon(logOut, 50, 50));
 		logOutButton.setToolTipText("Log Out");
 		logOutButton.setBackground(Color.white);
 		logOutButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -94,7 +94,7 @@ public class MainFrame  {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				Wellcome.frame.setVisible(true);
+				Welcome.frame.setVisible(true);
 			}
 		});
 		logOutButton.setBounds(609, 0, 50, 50);
@@ -106,7 +106,7 @@ public class MainFrame  {
 		frame.getContentPane().add(docNameLabel);
 
 		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//forth.png");
-		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(img, 300, 300));
+		JLabel lblNewLabel = new JLabel(Welcome.resizeIcon(img, 300, 300));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel.setBounds(193, -20, 300, 300);
 		frame.getContentPane().add(lblNewLabel);

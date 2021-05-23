@@ -19,7 +19,8 @@ public abstract class Form {
 	
 	protected boolean checkFirstName(String firstName) {
 		if(firstName.length() < 1 || firstName.length() >13) {
-			JOptionPane.showMessageDialog(SignUpframe, "First name must be between 2 - 13 characters","Warning", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(SignUpframe, "First name must be between 2 - 13 characters","Warning", 
+					JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
 		for(int i=0;i<firstName.length();i++) {

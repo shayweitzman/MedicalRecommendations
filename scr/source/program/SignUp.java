@@ -8,20 +8,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import Database.Database;
-import GUI.Wellcome;
+import GUI.Welcome;
+
 
 public class SignUp extends Form implements ActionListener {
 	private JTextField txtCPassword;
-	/*
-	private JTextField txtFirstName;
-	private JTextField txtLastName;*/
 
-	public SignUp(JFrame SignUpframe,/* JTextField txtFirstName,JTextField txtLastName,*/JTextField txtUserName, JTextField txtPassword, JTextField txtId,
+
+	public SignUp(JFrame SignUpframe,JTextField txtUserName, JTextField txtPassword, JTextField txtId,
 			JTextField txtCPassword) {
 		super(SignUpframe, txtUserName, txtPassword, txtId);
 		this.txtCPassword = txtCPassword;
-		/*this.txtFirstName = txtFirstName;
-		this.txtLastName = txtLastName;*/
+
 		
 	}
 
@@ -40,7 +38,7 @@ public class SignUp extends Form implements ActionListener {
 
 			if (msg.equals("Signed Up Successfully")) {
 				SignUpframe.dispose();
-				Wellcome.frame.setVisible(true);
+				Welcome.frame.setVisible(true);
 				JOptionPane.showMessageDialog(SignUpframe, msg, "Success", JOptionPane.DEFAULT_OPTION);
 
 			} else {
