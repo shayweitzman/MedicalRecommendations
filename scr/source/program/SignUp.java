@@ -26,14 +26,12 @@ public class SignUp extends Form implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		boolean valid = true;
-		/*valid = checkFirstName(txtFirstName.getText()) && valid;
-		valid = checkLastName(txtLastName.getText()) && valid;*/
 		valid = checkUserName(txtUserName.getText()) && valid;
 		valid = checkPassword(txtPassword.getText()) && valid;
 		valid = checkConfirmPassword(txtPassword.getText(), txtCPassword.getText()) && valid;
 		valid = checkID(this.txtId.getText()) && valid;
 		if (valid) {
-			Database db = new Database(/*txtFirstName.getText(), txtLastName.getText(),*/txtUserName.getText(), txtPassword.getText(), this.txtId.getText());
+			Database db = new Database(txtUserName.getText(), txtPassword.getText(), this.txtId.getText());
 			String msg = db.Write();
 
 			if (msg.equals("Signed Up Successfully")) {
@@ -49,7 +47,7 @@ public class SignUp extends Form implements ActionListener {
 
 	}
 
-	private boolean checkConfirmPassword(String password, String ConfPassword) {
+	public boolean checkConfirmPassword(String password, String ConfPassword) {
 		if (!password.equals(ConfPassword)) {
 			JOptionPane.showMessageDialog(SignUpframe, "the password are not match", "Warning",
 					JOptionPane.WARNING_MESSAGE);
