@@ -49,9 +49,9 @@ public class addPatientTXT {
 			FileWriter myWriter = new FileWriter(file, true);
 			myWriter.write(results);
 			myWriter.close();
-			System.out.println("Successfully wrote to the file.");
+			//System.out.println("Successfully wrote to the file.");
 		} catch (IOException e) {
-			System.out.println("An error occurred.");
+			//System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
 		

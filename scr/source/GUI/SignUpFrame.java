@@ -1,6 +1,8 @@
 package GUI;
 
 import java.awt.Color;
+import java.awt.Composite;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,10 +28,18 @@ public class SignUpFrame implements ActionListener {
 	private JTextField txtPassword;
 	private JTextField txtId;
 
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	public SignUpFrame(JFrame frm) {
 		this.frm = frm;
 	}
+	
 
+
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		frm.setVisible(false);
@@ -51,7 +61,7 @@ public class SignUpFrame implements ActionListener {
 		lblNewLabel.setBounds(340, 0, 100, 100);
 		SignUpframe.getContentPane().add(lblNewLabel);
 
-		//
+
 		ImageIcon usernameImage = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//Username.png");
 		JLabel lblUsernameLabel = new JLabel(Wellcome.resizeIcon(usernameImage, 35, 35));

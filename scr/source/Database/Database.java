@@ -113,7 +113,7 @@ public class Database {
 				BufferedWriter bw = new BufferedWriter(output);
 				PrintWriter pw = new PrintWriter(bw);
 				
-				pw.println("ID" + "," + "Username" + "," + "Password"+ "," + "First Name"+ "," + "Last Name");
+				pw.println("ID" + "," + "Username" + "," + "Password");
 				pw.flush();
 				pw.close();
 			}

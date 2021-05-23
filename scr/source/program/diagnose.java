@@ -126,8 +126,8 @@ public class diagnose implements ActionListener {
 			checkIron(this.dictionary.get("iron").getText());
 			checkHDL(this.dictionary.get("HDL").getText());
 
-			for (Diseases i : this.totalDiagnose.keySet())
-				System.out.println(i + ": " + this.totalDiagnose.get(i));
+			//for (Diseases i : this.totalDiagnose.keySet())
+				//System.out.println(i + ": " + this.totalDiagnose.get(i));
 			this.frame.setVisible(false);
 			Treatments personalTreatment = new Treatments(totalDiagnose);
 			addPatientTXT a = new addPatientTXT(user,personalTreatment,totalDiagnose, docName, new HashMap<String, Boolean>() {
@@ -430,7 +430,9 @@ public class diagnose implements ActionListener {
 				if (key.equals("id") && this.dictionary.get(key).getText().length() != 9)
 					throw new Exception();
 				if (!key.equals("name") && this.dictionary.get(key).getText().length() > 0) {
-					Double.parseDouble(this.dictionary.get(key).getText());
+					if(Double.parseDouble(this.dictionary.get(key).getText()) < 0)
+						throw new Exception();
+					
 				}
 			}
 			return true;

@@ -7,6 +7,7 @@ import java.io.*;
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
 import java.awt.Font;
@@ -132,7 +133,7 @@ public class DiagnoseFrame implements ActionListener {
 		try {
 			File file = new File(currentRelativePath.toAbsolutePath().toString() + "//source//Patients//" + pID + ".txt");
 			if (!Desktop.isDesktopSupported()) {
-				System.out.println("not supported");
+				JOptionPane.showMessageDialog(frame, "This feature is not supported", "Warning", JOptionPane.DEFAULT_OPTION);
 				return;
 			}
 			Desktop desktop = Desktop.getDesktop();
