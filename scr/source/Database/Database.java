@@ -22,17 +22,12 @@ public class Database {
 	private String username;
 	private String password;
 	private String docID;
-	/*private String firstname;
-	private String lastname;*/
 
-	public Database(/*String firstname,String lastname,*/String username, String password, String docID) {
+
+	public Database(String username, String password, String docID) {
 		this.username = username;
 		this.password = password;
 		this.docID = docID;
-		/*
-		this.firstname = firstname;
-		this.lastname = lastname;*/
-		
 
 	}
 
@@ -138,7 +133,7 @@ public class Database {
 				BufferedWriter bw = new BufferedWriter(output);
 				PrintWriter pw = new PrintWriter(bw);
 				
-				pw.println(docID + "," + username + "," + password/*+ "," + password+ "," + password*/);
+				pw.println(docID + "," + username + "," + password);
 				pw.flush();
 				pw.close();
 

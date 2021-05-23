@@ -33,8 +33,6 @@ public class Wellcome {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					//DiagnoseFrame x = new DiagnoseFrame();
-					//MainFrame y = new MainFrame("aln");
 					Wellcome window = new Wellcome();
 					window.frame.setVisible(true);
 				} catch (Exception e) {

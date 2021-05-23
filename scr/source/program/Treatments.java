@@ -44,9 +44,6 @@ public class Treatments {
 			if (totalDiagnose.get(d) != 0)
 				personalTreatment.put(d, totalTreatment.get(d));
 		}
-//		for(Diseases d : personalTreatment.keySet())
-//		{
-//			System.out.println(d+" : "+personalTreatment.get(d) );
-//		}
+
 	}
 }

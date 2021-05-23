@@ -126,8 +126,6 @@ public class diagnose implements ActionListener {
 			checkIron(this.dictionary.get("iron").getText());
 			checkHDL(this.dictionary.get("HDL").getText());
 
-			//for (Diseases i : this.totalDiagnose.keySet())
-				//System.out.println(i + ": " + this.totalDiagnose.get(i));
 			this.frame.setVisible(false);
 			Treatments personalTreatment = new Treatments(totalDiagnose);
 			addPatientTXT a = new addPatientTXT(user,personalTreatment,totalDiagnose, docName, new HashMap<String, Boolean>() {

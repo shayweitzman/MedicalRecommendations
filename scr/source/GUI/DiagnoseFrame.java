@@ -61,7 +61,7 @@ public class DiagnoseFrame implements ActionListener {
 		ImageIcon img = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//fifth.png");
 		JLabel lblNewLabel = new JLabel(Wellcome.resizeIcon(img, 200, 200));
-		//JLabel lblNewLabel = new JLabel("image");
+		
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel.setBounds(220, -10, 200, 200);
 		frame.getContentPane().add(lblNewLabel);

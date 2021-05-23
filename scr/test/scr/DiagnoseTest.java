@@ -32,10 +32,19 @@ public class DiagnoseTest {
 
 	@Test
 	public void testCheckInput() {
+		//No Errors
 		assertEquals(true, d.checkInput());
 		JTextField idField = new JTextField();
 		idField.setText("1");
 		d.dictionary.put("id", idField);
+		//False because ID must be at least 9 digits
+		assertEquals(false, d.checkInput());
+		idField.setText("123456789");
+		d.dictionary.put("id", idField);
+		JTextField ageField = new JTextField();
+		ageField.setText("-1");
+		d.dictionary.put("age", ageField);
+		//False because age can't be negative
 		assertEquals(false, d.checkInput());
 	}
 
