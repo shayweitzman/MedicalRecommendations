@@ -13,7 +13,7 @@ import GUI.Wellcome;
 public class SignUp extends Form implements ActionListener {
 	private JTextField txtCPassword;
 
-
+	public SignUp(){};
 	public SignUp(JFrame SignUpframe,JTextField txtUserName, JTextField txtPassword, JTextField txtId,
 			JTextField txtCPassword) {
 		super(SignUpframe, txtUserName, txtPassword, txtId);
@@ -46,7 +46,7 @@ public class SignUp extends Form implements ActionListener {
 
 	}
 
-	private boolean checkConfirmPassword(String password, String ConfPassword) {
+	public boolean checkConfirmPassword(String password, String ConfPassword) {
 		if (!password.equals(ConfPassword)) {
 			JOptionPane.showMessageDialog(SignUpframe, "the password are not match", "Warning",
 					JOptionPane.WARNING_MESSAGE);

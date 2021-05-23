@@ -34,9 +34,32 @@ public class diagnose implements ActionListener {
 	public diagnose() {
 		this.dictionary = new HashMap<String, JTextField>();
 		this.totalDiagnose = new HashMap<Diseases, Integer>();
-		totalDiagnose.put(Diseases.Infection, 0);
+		totalDiagnose.put(Diseases.anemia, 0);
+		totalDiagnose.put(Diseases.diet, 0);
+		totalDiagnose.put(Diseases.bleeding, 0);
+		totalDiagnose.put(Diseases.Hyperlipidemia, 0);
 		totalDiagnose.put(Diseases.Disorder_of_blood_formation, 0);
+		totalDiagnose.put(Diseases.Hematological_disorder, 0);
+		totalDiagnose.put(Diseases.Iron_poisoning, 0);
+		totalDiagnose.put(Diseases.Dehydration, 0);
+		totalDiagnose.put(Diseases.Infection, 0);
+		totalDiagnose.put(Diseases.Vitamin_deficiency, 0);
+		totalDiagnose.put(Diseases.Viral_disease, 0);
+		totalDiagnose.put(Diseases.Diseases_of_the_biliary_tract, 0);
+		totalDiagnose.put(Diseases.heart_diseases, 0);
+		totalDiagnose.put(Diseases.Blood_disease, 0);
+		totalDiagnose.put(Diseases.Liver_disease, 0);
+		totalDiagnose.put(Diseases.Kidney_disease, 0);
+		totalDiagnose.put(Diseases.Iron_deficiency, 0);
+		totalDiagnose.put(Diseases.Muscle_diseases, 0);
+		totalDiagnose.put(Diseases.Smoker, 0);
+		totalDiagnose.put(Diseases.Lung_disease, 0);
+		totalDiagnose.put(Diseases.Overactive_thyroid_gland, 0);
+		totalDiagnose.put(Diseases.Adult_diabetes, 0);
 		totalDiagnose.put(Diseases.cancer, 0);
+		totalDiagnose.put(Diseases.Increased_consumption_of_meat, 0);
+		totalDiagnose.put(Diseases.Use_of_various_medications, 0);
+		totalDiagnose.put(Diseases.Malnutrition, 0);
 	};
 	public diagnose(MainFrame user, JFrame frame, String docName, JTextField name, JTextField PId, JTextField age, JTextField WBC,
 			JTextField neut, JTextField lymph, JTextField Urea, JTextField RBC, JTextField hb, JTextField creatinie,
@@ -125,6 +148,7 @@ public class diagnose implements ActionListener {
 					Integer.parseInt(this.dictionary.get("age").getText()));
 			checkIron(this.dictionary.get("iron").getText());
 			checkHDL(this.dictionary.get("HDL").getText());
+			checkAP(this.dictionary.get("AP").getText());
 
 			this.frame.setVisible(false);
 			Treatments personalTreatment = new Treatments(totalDiagnose);
@@ -145,7 +169,7 @@ public class diagnose implements ActionListener {
 
 	}
 
-	private void checkWBC(String WBC, int age) {
+	public void checkWBC(String WBC, int age) {
 		if (WBC.length() == 0)
 			return;
 		double val = Double.parseDouble(WBC);
@@ -170,6 +194,7 @@ public class diagnose implements ActionListener {
 			addRisk(Diseases.Blood_disease, RARE);
 			addRisk(Diseases.cancer, RARE);
 		} else {
+			
 			addRisk(Diseases.Viral_disease, COMMON);
 			addRisk(Diseases.cancer, RARE);
 
@@ -190,7 +215,7 @@ public class diagnose implements ActionListener {
 			addRisk(Diseases.Infection, COMMON);// Bacterial infection
 	}
 
-	private void checkLymph(String WBC, String Lymph) {
+	public void checkLymph(String WBC, String Lymph) {
 		if (WBC.length() == 0 || Lymph.length() == 0 || Double.parseDouble(WBC) == 0)
 			return;
 		double precent = (Double.parseDouble(Lymph) / Double.parseDouble(WBC))*100;
@@ -227,7 +252,11 @@ public class diagnose implements ActionListener {
 		if (WBC.length() == 0 || RBC.length() == 0 || Double.parseDouble(WBC) == 0)
 			return;
 		double precent = (Double.parseDouble(RBC) / (Double.parseDouble(WBC) + Double.parseDouble(RBC)))*100;
-		this.man = forward_question(man, "Does the patient male?");
+		if (this.pregnant==null || !this.pregnant) {
+			this.man = forward_question(man, "Does the patient male?");
+			if (this.man)
+				this.pregnant=false;
+			}
 		double max, min;
 		if (this.man) {
 			max = 54;
@@ -263,7 +292,11 @@ public class diagnose implements ActionListener {
 			addRisk(Diseases.Dehydration, COMMON);
 			addRisk(Diseases.diet, COMMON);
 		} else {
-			this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
+			if (this.man==null || !this.man) {
+				this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
+				if (this.pregnant)
+					this.man=false;
+				}
 			if (this.pregnant) {
 				addRisk(Diseases.Malnutrition, RARE);
 				addRisk(Diseases.diet, RARE);
@@ -284,7 +317,11 @@ public class diagnose implements ActionListener {
 			min = 11.5;
 			max = 15.5;
 		}
-		this.man = forward_question(man, "Does the patient male?");
+		if (this.pregnant==null || !this.pregnant) {
+			this.man = forward_question(man, "Does the patient male?");
+			if (this.man)
+				this.pregnant=false;
+			}
 		if (this.man) {
 			max = 18;
 			min = 12;
@@ -342,7 +379,11 @@ public class diagnose implements ActionListener {
 		if (iron.length() == 0)
 			return;
 		double min = 60, max = 160;
-		this.man = forward_question(man, "Does the patient male?");
+		if (this.pregnant==null || !this.pregnant) {
+			this.man = forward_question(man, "Does the patient male?");
+			if(this.man)
+				this.pregnant=false;
+			}
 		if (this.man) {
 			min *= 0.8;
 		}
@@ -352,7 +393,12 @@ public class diagnose implements ActionListener {
 		if (val > max) {
 			addRisk(Diseases.Iron_poisoning, COMMON);
 		} else {
-			this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
+			if (this.man==null || !this.man) {
+
+				this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
+				if (this.pregnant)
+					this.man=false;
+				}
 			if (this.pregnant) {
 				addRisk(Diseases.diet, RARE);
 				addRisk(Diseases.bleeding, RARE);
@@ -368,7 +414,11 @@ public class diagnose implements ActionListener {
 		if (HDL.length() == 0)
 			return;
 		double min, max;
-		this.man = forward_question(man, "Does the patient male?");
+		if (this.pregnant==null || !this.pregnant) {
+			this.man = forward_question(man, "Does the patient male?");
+			if (this.man)
+				this.pregnant=false;
+			}
 		if (this.man) {
 			min = 29;
 			max = 62;
@@ -402,15 +452,21 @@ public class diagnose implements ActionListener {
 		if (val >= min && val <= max)
 			return;
 		if (val > max) {
+			
+			if (this.man==null || !this.man) {
+				
 			this.pregnant = forward_question(pregnant, "Does the patient pregnant?");
+			if (this.pregnant)
+				this.man=false;
+			}
 			if (!this.pregnant) {
 				addRisk(Diseases.Liver_disease, COMMON);
 				addRisk(Diseases.Diseases_of_the_biliary_tract, COMMON);
-				addRisk(Diseases.Adult_diabetes, COMMON);
 				addRisk(Diseases.Overactive_thyroid_gland, COMMON);
 				addRisk(Diseases.Use_of_various_medications, COMMON);
 			}
 		} else {
+			
 			addRisk(Diseases.diet, COMMON);
 			addRisk(Diseases.Vitamin_deficiency, COMMON);
 		}
@@ -427,6 +483,16 @@ public class diagnose implements ActionListener {
 			for (String key : this.dictionary.keySet()) {
 				if (key.equals("id") && this.dictionary.get(key).getText().length() != 9)
 					throw new Exception();
+				if(key.equals("name"))
+				{
+					for(int i=0;i<this.dictionary.get(key).getText().length();i++)
+					{
+						if(!Character.isLetter(dictionary.get("name").getText().charAt(i))&&!Character.isSpace(dictionary.get("name").getText().charAt(i)))
+						{
+							throw new Exception();
+						}
+					}
+				}
 				if (!key.equals("name") && this.dictionary.get(key).getText().length() > 0) {
 					if(Double.parseDouble(this.dictionary.get(key).getText()) < 0)
 						throw new Exception();

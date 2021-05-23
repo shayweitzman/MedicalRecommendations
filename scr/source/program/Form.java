@@ -10,42 +10,15 @@ public abstract class Form {
 	protected JTextField txtPassword;
 	protected JTextField txtId;
 	
+	public Form() {};
 	public Form(JFrame SignUpframe, JTextField txtUserName, JTextField txtPassword, JTextField txtId) {
 		this.SignUpframe = SignUpframe;
 		this.txtUserName = txtUserName;
 		this.txtPassword = txtPassword;
 		this.txtId = txtId;
 	}
-	
-	protected boolean checkFirstName(String firstName) {
-		if(firstName.length() < 1 || firstName.length() >13) {
-			JOptionPane.showMessageDialog(SignUpframe, "First name must be between 2 - 13 characters","Warning", JOptionPane.WARNING_MESSAGE);
-			return false;
-		}
-		for(int i=0;i<firstName.length();i++) {
-			if(!Character.isLetter(firstName.charAt(i))) {
-				JOptionPane.showMessageDialog(SignUpframe, "First Name can contain letters only","Warning", JOptionPane.WARNING_MESSAGE);
-				return false;
-			}
-		}
-		return true;
 
-	}
-	protected boolean checkLastName(String lastName) {
-		if(lastName.length() < 1 || lastName.length() >13) {
-			JOptionPane.showMessageDialog(SignUpframe, "Last name must be between 2 - 13 characters","Warning", JOptionPane.WARNING_MESSAGE);
-			return false;
-		}
-		for(int i=0;i<lastName.length();i++) {
-			if(!Character.isLetter(lastName.charAt(i))) {
-				JOptionPane.showMessageDialog(SignUpframe, "Last Name can contain letters only","Warning", JOptionPane.WARNING_MESSAGE);
-				return false;
-			}
-		}
-		return true;
-
-	}
-	protected boolean checkUserName(String userName) {
+	public boolean checkUserName(String userName) {
 		if(userName.length() < 6 || userName.length() > 8) {
 			JOptionPane.showMessageDialog(SignUpframe, "Username must be between 6 - 8 characters","Warning", JOptionPane.WARNING_MESSAGE);
 			return false;
@@ -67,7 +40,7 @@ public abstract class Form {
 
 	}
 	
-	protected boolean checkID(String id) {
+	public boolean checkID(String id) {
 		if(id.length() != 9) {
 			JOptionPane.showMessageDialog(SignUpframe, "ID must be 9 characters","Warning", JOptionPane.WARNING_MESSAGE);
 			return false;
@@ -84,7 +57,7 @@ public abstract class Form {
 		return true;
 	}
 	
-	protected boolean checkPassword(String password) {
+	public boolean checkPassword(String password) {
 		if(password.length() < 8 || password.length() > 10) {
 			JOptionPane.showMessageDialog(SignUpframe, "Password must be between 8 - 10 characters","Warning", JOptionPane.WARNING_MESSAGE);
 			return false;
