@@ -29,6 +29,8 @@ public class diagnose implements ActionListener {
 	private Boolean NAfrica=null;
 	private Boolean Diarrhea=null;
 	private JSlider neut;
+	
+
 	private JSlider lymph;
 	private JFrame frame;
 	private MainFrame user;
@@ -65,6 +67,7 @@ public class diagnose implements ActionListener {
 		totalDiagnose.put(Diseases.Increased_consumption_of_meat, 0);
 		totalDiagnose.put(Diseases.Use_of_various_medications, 0);
 		totalDiagnose.put(Diseases.Malnutrition, 0);
+		this.neut = this.lymph = new JSlider();
 	};
 	public diagnose(MainFrame user, JFrame frame, String docName, JTextField name, JTextField PId, JTextField age, JTextField WBC,
 			JSlider neut, JSlider lymph, JTextField Urea, JTextField RBC, JTextField hb, JTextField creatinie,
@@ -504,5 +507,18 @@ public class diagnose implements ActionListener {
 			return false;
 		}
 	}
+	public int getNeut() {
+		return neut.getValue();
+	}
+	public int getLymph() {
+		return lymph.getValue();
+	}
+	public void setNeut(int neut) {
+		this.neut.setValue(neut);
+	}
+	public void setLymph(int lymph) {
+		this.lymph.setValue(lymph);
+	}
+	
 
 }
