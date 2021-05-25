@@ -10,7 +10,9 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JSlider;
 import javax.swing.JTextField;
 
 import GUI.MainFrame;
@@ -26,8 +28,11 @@ public class diagnose implements ActionListener {
 	private Boolean ethiopian=null;
 	private Boolean NAfrica=null;
 	private Boolean Diarrhea=null;
+	private JSlider neut;
+	private JSlider lymph;
 	private JFrame frame;
 	private MainFrame user;
+
 
 	public static final int COMMON = 3;
 	public static final int RARE = 1;
@@ -62,7 +67,7 @@ public class diagnose implements ActionListener {
 		totalDiagnose.put(Diseases.Malnutrition, 0);
 	};
 	public diagnose(MainFrame user, JFrame frame, String docName, JTextField name, JTextField PId, JTextField age, JTextField WBC,
-			JTextField neut, JTextField lymph, JTextField Urea, JTextField RBC, JTextField hb, JTextField creatinie,
+			JSlider neut, JSlider lymph, JTextField Urea, JTextField RBC, JTextField hb, JTextField creatinie,
 			JTextField iron, JTextField HDL, JTextField AP) {
 		this.user = user;
 		this.docName = docName;
@@ -72,8 +77,6 @@ public class diagnose implements ActionListener {
 		dictionary.put("id", PId);
 		dictionary.put("age", age);
 		dictionary.put("WBC", WBC);
-		dictionary.put("neut", neut);
-		dictionary.put("lymph", lymph);
 		dictionary.put("Urea", Urea);
 		dictionary.put("RBC", RBC);
 		dictionary.put("hb", hb);
@@ -108,6 +111,8 @@ public class diagnose implements ActionListener {
 		totalDiagnose.put(Diseases.Increased_consumption_of_meat, 0);
 		totalDiagnose.put(Diseases.Use_of_various_medications, 0);
 		totalDiagnose.put(Diseases.Malnutrition, 0);
+		this.neut = neut;
+		this.lymph = lymph;
 		
 
 	}
@@ -139,8 +144,8 @@ public class diagnose implements ActionListener {
 				this.totalDiagnose.put(i, 0);
 			}
 			checkWBC(this.dictionary.get("WBC").getText(), Integer.parseInt(this.dictionary.get("age").getText()));
-			checkNeut(this.dictionary.get("WBC").getText(), this.dictionary.get("neut").getText());
-			checkLymph(this.dictionary.get("WBC").getText(), this.dictionary.get("lymph").getText());
+			checkNeut(this.neut.getValue());
+			checkLymph(this.lymph.getValue());
 			checkRBC(this.dictionary.get("RBC").getText());
 			checkHCT(this.dictionary.get("RBC").getText(), this.dictionary.get("WBC").getText());
 			checkUrea(this.dictionary.get("Urea").getText());
@@ -201,10 +206,7 @@ public class diagnose implements ActionListener {
 		}
 	}
 
-	public void checkNeut(String WBC, String neut) {
-		if (WBC.length() == 0 || neut.length() == 0 || Double.parseDouble(WBC) == 0)
-			return;
-		double precent = (Double.parseDouble(neut) / Double.parseDouble(WBC))*100;
+	public void checkNeut(int precent) {
 		if (precent >= 28 && precent <= 54)
 			return;
 		if (precent < 28) {
@@ -215,10 +217,7 @@ public class diagnose implements ActionListener {
 			addRisk(Diseases.Infection, COMMON);// Bacterial infection
 	}
 
-	public void checkLymph(String WBC, String Lymph) {
-		if (WBC.length() == 0 || Lymph.length() == 0 || Double.parseDouble(WBC) == 0)
-			return;
-		double precent = (Double.parseDouble(Lymph) / Double.parseDouble(WBC))*100;
+	public void checkLymph(int precent) {
 		if (precent >= 36 && precent <= 52)
 			return;
 		if (precent < 36)

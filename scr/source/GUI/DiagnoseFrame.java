@@ -59,12 +59,6 @@ public class DiagnoseFrame implements ActionListener {
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setLayout(null);
 
-//		ImageIcon img = new ImageIcon(
-//				currentRelativePath.toAbsolutePath().toString() + "//source//images//diagnose.png");
-//
-//		JLabel backgroundLabel = new JLabel(img);
-//		backgroundLabel.setBounds(0, 0, 1070, 859);
-
 		ImageIcon image = new ImageIcon(
 				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//diagnose.png");
 		JLabel backgroundLabel = new JLabel(image);

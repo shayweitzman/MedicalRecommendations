@@ -53,16 +53,16 @@ public class DiagnoseTest {
 		
 	}
 
-	@Test
-	public void testCheckNeut() {
-		resetTotalDiagnose();
-		d.checkNeut("100", "55");
-		assertEquals(new Integer(3), d.totalDiagnose.get(Diseases.Infection));
-		d.checkNeut("100", "17");
-		assertEquals(new Integer(3), d.totalDiagnose.get(Diseases.Disorder_of_blood_formation));
-		assertEquals(new Integer(6), d.totalDiagnose.get(Diseases.Infection));
-		assertEquals(new Integer(1), d.totalDiagnose.get(Diseases.cancer));
-	}
+//	@Test
+//	public void testCheckNeut() {
+//		resetTotalDiagnose();
+//		d.checkNeut("100", "55");
+//		assertEquals(new Integer(3), d.totalDiagnose.get(Diseases.Infection));
+//		d.checkNeut("100", "17");
+//		assertEquals(new Integer(3), d.totalDiagnose.get(Diseases.Disorder_of_blood_formation));
+//		assertEquals(new Integer(6), d.totalDiagnose.get(Diseases.Infection));
+//		assertEquals(new Integer(1), d.totalDiagnose.get(Diseases.cancer));
+//	}
 	
 	@Test
 	public void testCheckWBC()
@@ -73,13 +73,13 @@ public class DiagnoseTest {
 		assertEquals(new Integer(1), d.totalDiagnose.get(Diseases.cancer));
 	}
 	
-	@Test
-	public void testCheckLymph()
-	{
-		resetTotalDiagnose();
-		d.checkLymph("100", "25");
-		assertEquals(new Integer(3), d.totalDiagnose.get(Diseases.Disorder_of_blood_formation));
-	}
+//	@Test
+//	public void testCheckLymph()
+//	{
+//		resetTotalDiagnose();
+//		d.checkLymph("100", "25");
+//		assertEquals(new Integer(3), d.totalDiagnose.get(Diseases.Disorder_of_blood_formation));
+//	}
 	
 	
 	@Test

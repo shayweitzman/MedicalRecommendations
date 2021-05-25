@@ -78,10 +78,10 @@ public class addPatientTXT {
 		StringBuffer LowRisk = new StringBuffer();
 		boolean Healthy = true;
 		for (Diseases d : Diagnose.keySet()) {
-			if (Diagnose.get(d) >= 5) {
+			if (Diagnose.get(d) >= 3) {
 				HighRisk.append("\t" + d.toString().replaceAll("_", " ") +" ---> Recommended Treatment: "+personalTreatment.personalTreatment.get(d) +"\n");
 				Healthy = false;
-			} else if (Diagnose.get(d) > 3) {
+			} else if (Diagnose.get(d) == 2) {
 				MediumRisk.append("\t" + d.toString().replaceAll("_", " ") +" ---> Recommended Treatment: "+personalTreatment.personalTreatment.get(d) + "\n");
 				Healthy = false;
 			} else if (Diagnose.get(d) > 0) {
