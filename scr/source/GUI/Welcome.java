@@ -27,6 +27,8 @@ public class Welcome {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					//MainFrame x = new MainFrame("aln");
+					//DiagnoseFrame y = new DiagnoseFrame(x,"dsf","dsf","fds","gfd");
 					Welcome window = new Welcome();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -41,6 +43,7 @@ public class Welcome {
 	 */
 	public Welcome() {
 		initialize();
+		
 	}
 	
 	public static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
@@ -68,7 +71,7 @@ public class Welcome {
 		
 		ImageIcon image = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//Welcome.png");
-		JLabel backgroundLabel = new JLabel(resizeIcon(image, 1070, 533));
+		JLabel backgroundLabel = new JLabel(image);
 		backgroundLabel.setBounds(0, -10, 1070, 543);
 		
 		

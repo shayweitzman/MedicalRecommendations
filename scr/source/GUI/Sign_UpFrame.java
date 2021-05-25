@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -27,6 +29,7 @@ public class Sign_UpFrame implements ActionListener {
 
 	/**
 	 * Create the application.
+	 * @wbp.parser.entryPoint
 	 */
 	public Sign_UpFrame(JFrame welcomeFrame) {
 		this.welcomeFrame = welcomeFrame;
@@ -34,6 +37,7 @@ public class Sign_UpFrame implements ActionListener {
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @wbp.parser.entryPoint
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -51,9 +55,50 @@ public class Sign_UpFrame implements ActionListener {
 		
 		ImageIcon image = new ImageIcon(
 				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//Sign_Up.png");
-		JLabel backgroundLabel = new JLabel(Welcome.resizeIcon(image, 1070, 533));
+		JLabel backgroundLabel = new JLabel(image);
 		backgroundLabel.setBounds(0, -10, 1070, 543);
 		
+		txtUserName = new JTextField();
+		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtUserName.setBounds(650, 215, 263, 35);
+		frame.getContentPane().add(txtUserName);
+		txtUserName.setColumns(10);
+
+		txtPassword = new JTextField();
+		txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtPassword.addKeyListener(new KeyAdapter() {
+	        @Override
+	        public void keyTyped(KeyEvent e) {
+	            if (txtPassword.getText().length() >= 10 ) // limit to 10 characters
+	                e.consume();
+	        }
+	    });
+		txtPassword.setBounds(650, 268, 263, 35);
+		frame.getContentPane().add(txtPassword);
+
+		txtCPassword = new JTextField();
+		txtCPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtCPassword.setBounds(650, 319, 263, 35);
+		frame.getContentPane().add(txtCPassword);
+		txtCPassword.addKeyListener(new KeyAdapter() {
+	        @Override
+	        public void keyTyped(KeyEvent e) {
+	            if (txtCPassword.getText().length() >= 10 ) // limit to 10 characters
+	                e.consume();
+	        }
+	    });
+
+		txtId = new JTextField();
+		txtId.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtId.addKeyListener(new KeyAdapter() {
+	        @Override
+	        public void keyTyped(KeyEvent e) {
+	            if (txtId.getText().length() >= 9 ) // limit to 9 characters
+	                e.consume();
+	        }
+	    });
+		txtId.setBounds(650, 372, 263, 35);
+		frame.getContentPane().add(txtId);
 		
 		JButton backButton = new JButton("Back");
 		backButton.addActionListener(new ActionListener() {
@@ -65,41 +110,17 @@ public class Sign_UpFrame implements ActionListener {
 			}
 		});
 		backButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		backButton.setBounds(657, 400, 149, 58);
+		backButton.setBounds(657, 417, 149, 58);
 		frame.getContentPane().add(backButton);
 		backButton.setBackground(new Color(64, 166, 234));
 		backButton.setForeground(Color.white);
 		frame.getContentPane().add(backButton);
 		
-		txtUserName = new JTextField("User Name");
-		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		txtUserName.setBounds(719, 210, 263, 35);
-		frame.getContentPane().add(txtUserName);
-		txtUserName.setColumns(10);
-
-		txtPassword = new JTextField("Password");
-		txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		txtPassword.setColumns(10);
-		txtPassword.setBounds(719, 256, 263, 35);
-		frame.getContentPane().add(txtPassword);
-
-		txtCPassword = new JTextField("Confirm Password");
-		txtCPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		txtCPassword.setBounds(719, 302, 263, 35);
-		frame.getContentPane().add(txtCPassword);
-		txtCPassword.setColumns(10);
-
-		txtId = new JTextField("ID");
-		txtId.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		txtId.setColumns(10);
-		txtId.setBounds(719, 348, 263, 35);
-		frame.getContentPane().add(txtId);
-		
 		JButton SignUpButton = new JButton("Sign up");
 		SignUpButton.addActionListener(
 				(ActionListener) new SignUp(frame, txtUserName, txtPassword, txtId, txtCPassword));
 		SignUpButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		SignUpButton.setBounds(834, 400, 149, 58);
+		SignUpButton.setBounds(834, 417, 149, 58);
 		SignUpButton.setBackground(new Color(64, 166, 234));
 		SignUpButton.setForeground(Color.white);
 		frame.getContentPane().add(SignUpButton);	

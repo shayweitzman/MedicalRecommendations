@@ -52,20 +52,23 @@ public class DiagnoseFrame implements ActionListener {
 	private void initialize() {
 		Path currentRelativePath = Paths.get("");
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setTitle("Patient's Diagnose");
 		ImageIcon icon = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
 		frame.setIconImage(icon.getImage());
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setLayout(null);
 
-		ImageIcon img = new ImageIcon(
-				currentRelativePath.toAbsolutePath().toString() + "//source//images//fifth.png");
+//		ImageIcon img = new ImageIcon(
+//				currentRelativePath.toAbsolutePath().toString() + "//source//images//diagnose.png");
+//
+//		JLabel backgroundLabel = new JLabel(img);
+//		backgroundLabel.setBounds(0, 0, 1070, 859);
 
-		JLabel lblNewLabel = new JLabel(Welcome.resizeIcon(img, 200, 200));
-
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel.setBounds(220, -10, 200, 200);
-		frame.getContentPane().add(lblNewLabel);
+		ImageIcon image = new ImageIcon(
+				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//diagnose.png");
+		JLabel backgroundLabel = new JLabel(image);
+		backgroundLabel.setBounds(0, 0, 1070, 859);
 
 		JLabel lblNewLabel_1 = new JLabel("Hello " + this.docName);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -74,7 +77,7 @@ public class DiagnoseFrame implements ActionListener {
 
 		ImageIcon logOut = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//logOut.png");
-		JButton logOutButton = new JButton(Welcome.resizeIcon(logOut, 50, 50));
+		JButton logOutButton = new JButton(logOut);
 		Border emptyBorder = BorderFactory.createEmptyBorder();
 		logOutButton.setBorder(emptyBorder);
 		logOutButton.setToolTipText("Log Out");
@@ -88,7 +91,7 @@ public class DiagnoseFrame implements ActionListener {
 				Welcome.frame.setVisible(true);
 			}
 		});
-		logOutButton.setBounds(609, 0, 50, 50);
+		logOutButton.setBounds(897, 0, 157, 60);
 		frame.getContentPane().add(logOutButton);
 		
 		JButton backButton = new JButton("Back");
@@ -101,7 +104,7 @@ public class DiagnoseFrame implements ActionListener {
 			}
 		});
 		backButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		backButton.setBounds(60, 453, 237, 94);
+		backButton.setBounds(129, 694, 237, 94);
 		backButton.setBackground(new Color(64,166,234));
 		backButton.setForeground(Color.white);
 		frame.getContentPane().add(backButton);
@@ -111,21 +114,22 @@ public class DiagnoseFrame implements ActionListener {
 		PHistoryButton.addActionListener(this);
 		PHistoryButton.setBackground(new Color(64, 166, 234));
 		PHistoryButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		PHistoryButton.setBounds(372, 453, 237, 94);
+		PHistoryButton.setBounds(677, 694, 237, 94);
 		frame.getContentPane().add(PHistoryButton);
 
 		JTextArea textArea = new JTextArea(this.results);
-		textArea.setFont(new Font("Courier New", Font.PLAIN, 13));
+		textArea.setFont(new Font("Courier New", Font.PLAIN, 15));
 		textArea.setBounds(24, 177, 585, 265);
 		textArea.setEditable(false);
 		JScrollPane scroll = new JScrollPane(textArea);
 		scroll.setBorder(BorderFactory.createLineBorder(Color.white));
-		scroll.setBounds(24, 177, 585, 265);
+		scroll.setBounds(174, 268, 703, 384);
 		frame.getContentPane().add(scroll);
 
-		frame.setBounds(100, 100, 673, 611);
+		frame.setBounds(100, 100, 1070, 859);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(backgroundLabel);
 	}
 
 	@Override

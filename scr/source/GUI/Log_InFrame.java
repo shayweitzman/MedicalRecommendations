@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
@@ -46,29 +47,44 @@ public class Log_InFrame implements ActionListener {
 		
 		ImageIcon image = new ImageIcon(
 				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//login.png");
-		JLabel backgroundLabel = new JLabel(Welcome.resizeIcon(image, 1070, 533));
+		JLabel backgroundLabel = new JLabel(image);
 		backgroundLabel.setBounds(0, -10, 1070, 543);
 		
-		txtUserName = new JTextField("User Name",8);
+		txtUserName = new JTextField();
 		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		txtUserName.setBounds(714, 237, 287, 35);
+		txtUserName.setBounds(647, 237, 287, 35);
 		frame.getContentPane().add(txtUserName);
 		txtUserName.setColumns(10);
+		txtUserName.addKeyListener(new KeyAdapter() {
+	        @Override
+	        public void keyTyped(KeyEvent e) {
+	            if (txtUserName.getText().length() >= 8 ) // limit to 8 characters
+	                e.consume();
+	        }
+	    });
 		
 		txtPassword = new JPasswordField(10);
-		//txtPassword.setEchoChar((char)0);
-		txtPassword.setText("Password");		
-		//txtPassword.setText();
 		txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		txtPassword.setColumns(10);
-		txtPassword.setBounds(714, 283, 287, 35);
+		txtPassword.addKeyListener(new KeyAdapter() {
+	        @Override
+	        public void keyTyped(KeyEvent e) {
+	            if (txtPassword.getText().length() >= 10 ) // limit to 10 characters
+	                e.consume();
+	        }
+	    });
+		txtPassword.setBounds(647, 290, 287, 35);
 		frame.getContentPane().add(txtPassword);
 		
-		txtId = new JTextField("ID");
-		//txtId.setText("ID");
+		txtId = new JTextField();
 		txtId.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		txtId.setColumns(10);
-		txtId.setBounds(714, 329, 287, 35);
+		txtId.addKeyListener(new KeyAdapter() {
+	        @Override
+	        public void keyTyped(KeyEvent e) {
+	            if (txtId.getText().length() >= 9 ) // limit to 9 characters
+	                e.consume();
+	        }
+	    });
+		txtId.setBounds(647, 343, 287, 35);
 		frame.getContentPane().add(txtId);
 		
 		JButton backButton = new JButton("Back");
