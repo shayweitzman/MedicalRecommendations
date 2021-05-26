@@ -89,8 +89,8 @@ public class MainFrame  {
 		
 		ImageIcon image = new ImageIcon(
 				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//detailes.png");
-		JLabel backgroundLabel = new JLabel(image);
-		backgroundLabel.setBounds(0, 0, 1070, 859);
+		JLabel backgroundLabel = new JLabel(Welcome.resizeIcon(image, 900, 723));
+		backgroundLabel.setBounds(0, 0, 900, 650);
 
 		ImageIcon logOut = new ImageIcon(
 				currentRelativePath.toAbsolutePath().toString() + "//source//images//logOut.png");
@@ -120,18 +120,18 @@ public class MainFrame  {
 
 		JLabel NameLabel = new JLabel("Name");
 		NameLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		NameLabel.setBounds(45, 299, 82, 37);
+		NameLabel.setBounds(0, 243, 82, 37);
 		frame.getContentPane().add(NameLabel);
 
 		nameField = new JTextField();
 		nameField.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		nameField.setBounds(163, 297, 198, 37);
+		nameField.setBounds(80, 241, 198, 37);
 		frame.getContentPane().add(nameField);
 		nameField.setColumns(10);
 
 		JLabel IdLabel = new JLabel("ID");
 		IdLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		IdLabel.setBounds(400, 299, 27, 37);
+		IdLabel.setBounds(298, 243, 27, 37);
 		frame.getContentPane().add(IdLabel);
 
 		IdField = new JTextField();
@@ -143,136 +143,136 @@ public class MainFrame  {
 		                e.consume();
 		        }
 		    });
-		IdField.setBounds(462, 297, 197, 37);
+		IdField.setBounds(345, 241, 197, 37);
 		frame.getContentPane().add(IdField);
 
 		JLabel ageLabel = new JLabel("Age");
 		ageLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		ageLabel.setBounds(702, 301, 50, 37);
+		ageLabel.setBounds(585, 243, 50, 37);
 		frame.getContentPane().add(ageLabel);
 
 		ageField = new JTextField();
 		ageField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		ageField.setColumns(10);
-		ageField.setBounds(762, 299, 254, 37);
+		ageField.setBounds(645, 241, 228, 37);
 		frame.getContentPane().add(ageField);
 
 		JLabel WBCLabel = new JLabel("WBC");
 		WBCLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		WBCLabel.setBounds(45, 349, 82, 37);
+		WBCLabel.setBounds(0, 291, 82, 37);
 		frame.getContentPane().add(WBCLabel);
 
 		WBCField = new JTextField();
 		WBCField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		WBCField.setColumns(10);
-		WBCField.setBounds(163, 347, 198, 37);
+		WBCField.setBounds(80, 291, 198, 37);
 		frame.getContentPane().add(WBCField);
 
 		JLabel neutLabel = new JLabel("Neut");
 		neutLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		neutLabel.setBounds(568, 578, 63, 37);
+		neutLabel.setBounds(448, 478, 63, 37);
 		frame.getContentPane().add(neutLabel);
 
 		JLabel lymphLabel = new JLabel("Lymph");
 		lymphLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lymphLabel.setBounds(45, 578, 82, 37);
+		lymphLabel.setBounds(0, 478, 82, 37);
 		frame.getContentPane().add(lymphLabel);
 
 		JLabel RBCLabel = new JLabel("RBC");
 		RBCLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		RBCLabel.setBounds(400, 349, 55, 37);
+		RBCLabel.setBounds(288, 291, 55, 37);
 		frame.getContentPane().add(RBCLabel);
 
 		JLabel UreaLabel = new JLabel("Urea");
 		UreaLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		UreaLabel.setBounds(702, 355, 82, 37);
+		UreaLabel.setBounds(585, 291, 63, 37);
 		frame.getContentPane().add(UreaLabel);
 
 		JLabel hbLabel = new JLabel("Hb");
 		hbLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		hbLabel.setBounds(702, 405, 39, 37);
+		hbLabel.setBounds(585, 339, 39, 37);
 		frame.getContentPane().add(hbLabel);
 
 		JLabel creatinieLabel = new JLabel("Creatinine");
 		creatinieLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		creatinieLabel.setBounds(163, 500, 120, 37);
+		creatinieLabel.setBounds(44, 399, 120, 37);
 		frame.getContentPane().add(creatinieLabel);
 
 		JLabel ironLabel = new JLabel("Iron");
 		ironLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		ironLabel.setBounds(45, 397, 50, 37);
+		ironLabel.setBounds(0, 339, 50, 37);
 		frame.getContentPane().add(ironLabel);
 
 		JLabel hdlLabel = new JLabel("HDL");
 		hdlLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		hdlLabel.setBounds(400, 401, 50, 37);
+		hdlLabel.setBounds(288, 339, 50, 37);
 		frame.getContentPane().add(hdlLabel);
 
 		JLabel APLabel = new JLabel("Alkaline Phosphatase");
 		APLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		APLabel.setBounds(525, 500, 244, 37);
+		APLabel.setBounds(406, 399, 244, 37);
 		frame.getContentPane().add(APLabel);
 
 		UreaField = new JTextField();
 		UreaField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		UreaField.setColumns(10);
-		UreaField.setBounds(762, 351, 254, 37);
+		UreaField.setBounds(645, 289, 228, 37);
 		frame.getContentPane().add(UreaField);
 
 		RBCField = new JTextField();
 		RBCField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		RBCField.setColumns(10);
-		RBCField.setBounds(462, 351, 197, 37);
+		RBCField.setBounds(345, 289, 197, 37);
 		frame.getContentPane().add(RBCField);
 
 		hbField = new JTextField();
 		hbField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		hbField.setColumns(10);
-		hbField.setBounds(762, 403, 254, 37);
+		hbField.setBounds(645, 339, 228, 37);
 		frame.getContentPane().add(hbField);
 
 		creatinieField = new JTextField();
 		creatinieField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		creatinieField.setColumns(10);
-		creatinieField.setBounds(282, 500, 198, 37);
+		creatinieField.setBounds(163, 399, 198, 37);
 		frame.getContentPane().add(creatinieField);
 
 		ironField = new JTextField();
 		ironField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		ironField.setColumns(10);
-		ironField.setBounds(164, 395, 197, 37);
+		ironField.setBounds(80, 339, 197, 37);
 		frame.getContentPane().add(ironField);
 
 		HDLField = new JTextField();
 		HDLField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		HDLField.setColumns(10);
-		HDLField.setBounds(460, 397, 199, 37);
+		HDLField.setBounds(345, 339, 199, 37);
 		frame.getContentPane().add(HDLField);
 
 		APField = new JTextField();
 		APField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		APField.setColumns(10);
-		APField.setBounds(767, 499, 198, 37);
+		APField.setBounds(648, 398, 198, 37);
 		frame.getContentPane().add(APField);
 
 		
 		lymphSlider = new JSlider();
-		lymphSlider.setBounds(129, 589, 281, 26);
+		lymphSlider.setBounds(90, 489, 272, 26);
 		frame.getContentPane().add(lymphSlider);
 		
 		neutSlider = new JSlider();
-		neutSlider.setBounds(633, 589, 312, 26);
+		neutSlider.setBounds(506, 489, 303, 26);
 		frame.getContentPane().add(neutSlider);
-		frame.setBounds(100, 100, 1070, 859);
+		frame.setBounds(100, 100, 900, 650);
 		
 		JLabel lymphLabel_1 = new JLabel("50%");
 		lymphLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lymphLabel_1.setBounds(420, 578, 82, 37);
+		lymphLabel_1.setBounds(372, 478, 82, 37);
 		frame.getContentPane().add(lymphLabel_1);
 		
 		JLabel neutLabel_1 = new JLabel("50%");
 		neutLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		neutLabel_1.setBounds(953, 578, 74, 37);
+		neutLabel_1.setBounds(819, 478, 74, 37);
 		frame.getContentPane().add(neutLabel_1);
 		
 		lymphSlider.addChangeListener(new ChangeListener()
@@ -306,7 +306,7 @@ public class MainFrame  {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		diagnoseButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		diagnoseButton.setBounds(793, 695, 234, 86);
+		diagnoseButton.setBounds(639, 526, 234, 86);
 		frame.getContentPane().add(diagnoseButton);
 		frame.getContentPane().add(backgroundLabel);
 		

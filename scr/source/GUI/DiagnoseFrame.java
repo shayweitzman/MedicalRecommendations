@@ -62,7 +62,7 @@ public class DiagnoseFrame implements ActionListener {
 		ImageIcon image = new ImageIcon(
 				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//diagnose.png");
 		JLabel backgroundLabel = new JLabel(image);
-		backgroundLabel.setBounds(0, 0, 1070, 859);
+		backgroundLabel.setBounds(0, -20, 900, 650);
 
 		JLabel lblNewLabel_1 = new JLabel("Hello " + this.docName);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -85,7 +85,7 @@ public class DiagnoseFrame implements ActionListener {
 				Welcome.frame.setVisible(true);
 			}
 		});
-		logOutButton.setBounds(897, 0, 157, 60);
+		logOutButton.setBounds(728, 0, 157, 60);
 		frame.getContentPane().add(logOutButton);
 		
 		JButton backButton = new JButton("Back");
@@ -98,7 +98,7 @@ public class DiagnoseFrame implements ActionListener {
 			}
 		});
 		backButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		backButton.setBounds(129, 694, 237, 94);
+		backButton.setBounds(64, 507, 237, 94);
 		backButton.setBackground(new Color(64,166,234));
 		backButton.setForeground(Color.white);
 		frame.getContentPane().add(backButton);
@@ -108,19 +108,19 @@ public class DiagnoseFrame implements ActionListener {
 		PHistoryButton.addActionListener(this);
 		PHistoryButton.setBackground(new Color(64, 166, 234));
 		PHistoryButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		PHistoryButton.setBounds(677, 694, 237, 94);
+		PHistoryButton.setBounds(612, 507, 237, 94);
 		frame.getContentPane().add(PHistoryButton);
 
 		JTextArea textArea = new JTextArea(this.results);
-		textArea.setFont(new Font("Courier New", Font.PLAIN, 15));
+		textArea.setFont(new Font("Courier New", Font.PLAIN, 13));
 		textArea.setBounds(24, 177, 585, 265);
 		textArea.setEditable(false);
 		JScrollPane scroll = new JScrollPane(textArea);
 		scroll.setBorder(BorderFactory.createLineBorder(Color.white));
-		scroll.setBounds(174, 268, 703, 384);
+		scroll.setBounds(141, 129, 619, 349);
 		frame.getContentPane().add(scroll);
 
-		frame.setBounds(100, 100, 1070, 859);
+		frame.setBounds(100, 100, 900, 650);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().add(backgroundLabel);
