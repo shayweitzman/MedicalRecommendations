@@ -1,119 +1,120 @@
-//package GUI;
-//
-//import java.awt.Color;
-//import java.awt.Font;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
-//import java.awt.event.ItemEvent;
-//import java.awt.event.ItemListener;
-//import java.awt.event.KeyEvent;
-//import java.nio.file.Path;
-//import java.nio.file.Paths;
-//
-//import javax.swing.ImageIcon;
-//import javax.swing.JButton;
-//import javax.swing.JFrame;
-//import javax.swing.JLabel;
-//import javax.swing.JPasswordField;
-//import javax.swing.JTextField;
-//
-//import org.w3c.dom.Text;
-//
-//import program.LogIn;
-//
-//public class LogInFrame implements ActionListener {
-//	private JFrame frm;
-//	private JFrame Loginframe;
-//	private JTextField txtUserName;
-//	private JPasswordField txtPassword;
-//	private JTextField txtId;
-//	
-//	public LogInFrame(JFrame frm) {
-//		this.frm = frm;
-//	}
-//
-//	@Override
-//	public void actionPerformed(ActionEvent e) {
-//		frm.setVisible(false);
-//		Path currentRelativePath = Paths.get("");
-//		Loginframe = new JFrame();
-//		Loginframe.setTitle("Login");
-//		ImageIcon img = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
-//		Loginframe.setIconImage(img.getImage());
-//		Loginframe.setBounds(100, 100, 780, 409);
-//		Loginframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		Loginframe.getContentPane().setBackground(Color.WHITE);
-//		Loginframe.getContentPane().setLayout(null);
-//		Loginframe.setVisible(true);
-//		
-//		ImageIcon image = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//sec.png");
-//		JLabel lblNewLabel = new JLabel(Welcome.resizeIcon(image, 200,200));
-//		lblNewLabel.setBounds(280, -20, 200, 200);
-//		Loginframe.getContentPane().add(lblNewLabel);
-//		
-//		txtUserName = new JTextField("User Name",8);
-//		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
-//		txtUserName.setBounds(250, 153, 276, 35);
-//		Loginframe.getContentPane().add(txtUserName);
-//		txtUserName.setColumns(10);
-//
-//		ImageIcon usernameImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//Username.png");
-//		JLabel lblUsernameLabel = new JLabel(Welcome.resizeIcon(usernameImage, 35,35));
-//		lblUsernameLabel.setBounds(120, 80, 180, 180);
-//		Loginframe.getContentPane().add(lblUsernameLabel);
-//		
-//		ImageIcon passwordImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//password.png");
-//		JLabel lblPassLabel = new JLabel(Welcome.resizeIcon(passwordImage, 45,45));
-//		lblPassLabel.setBounds(110, 110, 200, 200);
-//		Loginframe.getContentPane().add(lblPassLabel);
-//		
-//		ImageIcon idImage = new ImageIcon(currentRelativePath.toAbsolutePath().toString() + "//source//images//ID.png");
-//		JLabel lblIDLabel = new JLabel(Welcome.resizeIcon(idImage, 45,45));
-//		lblIDLabel.setBounds(110, 150, 200, 200);
-//		Loginframe.getContentPane().add(lblIDLabel);
-//		
-//		
-//		txtPassword = new JPasswordField(10);
-//		//txtPassword.setEchoChar((char)0);
-//		txtPassword.setText("Password");		
-//		//txtPassword.setText();
-//		txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
-//		txtPassword.setColumns(10);
-//		txtPassword.setBounds(250, 193, 276, 35);
-//		Loginframe.getContentPane().add(txtPassword);
-//		
-//		txtId = new JTextField("ID");
-//		//txtId.setText("ID");
-//		txtId.setFont(new Font("Tahoma", Font.PLAIN, 30));
-//		txtId.setColumns(10);
-//		txtId.setBounds(250, 236, 276, 35);
-//		Loginframe.getContentPane().add(txtId);
-//		
-//		JButton backButton = new JButton("Back");
-//		backButton.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				Loginframe.dispose();
-//				frm.setVisible(true);
-//			}
-//		});
-//		backButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-//		backButton.setBounds(50, 280, 231, 60);
-//		backButton.setBackground(new Color(64,166,234));
-//		backButton.setForeground(Color.white);
-//		Loginframe.getContentPane().add(backButton);
-//		
-//		JButton logInButton = new JButton("Login");
-//		logInButton.addActionListener((ActionListener)new LogIn(Loginframe, txtUserName, txtPassword, txtId));
-//		logInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-//		logInButton.setBounds(500, 280, 231, 60);
-//		logInButton.setBackground(new Color(64,166,234));
-//		logInButton.setForeground(Color.white);
-//		logInButton.setMnemonic(KeyEvent.VK_ENTER);
-//		
-//		Loginframe.getContentPane().add(logInButton);
-//		
-//	}
-//
-//}
+package GUI;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import program.LogIn;
+
+public class LogInFrame implements ActionListener {
+	private JFrame welcomeFrame;
+	private JFrame frame;
+	private JTextField txtUserName;
+	private JPasswordField txtPassword;
+	private JTextField txtId;
+
+	public LogInFrame(JFrame welcomeFrame) {
+		this.welcomeFrame = welcomeFrame;
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		welcomeFrame.setVisible(false);
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setTitle("Login");
+		ImageIcon img = new ImageIcon(
+				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//icon.png");
+		frame.setIconImage(img.getImage());
+		frame.getContentPane().setBackground(Color.WHITE);
+		frame.setBounds(100, 100, 1070, 553);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+
+		ImageIcon image = new ImageIcon(
+				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//login.png");
+		JLabel backgroundLabel = new JLabel(image);
+		backgroundLabel.setBounds(0, -10, 1070, 543);
+
+		txtUserName = new JTextField();
+		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtUserName.setBounds(647, 237, 287, 35);
+		frame.getContentPane().add(txtUserName);
+		txtUserName.setColumns(10);
+		txtUserName.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (txtUserName.getText().length() >= 8) // limit to 8 characters
+					e.consume();
+			}
+		});
+
+		txtPassword = new JPasswordField(10);
+		txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtPassword.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (txtPassword.getText().length() >= 10) // limit to 10 characters
+					e.consume();
+			}
+		});
+		txtPassword.setBounds(647, 290, 287, 35);
+		frame.getContentPane().add(txtPassword);
+
+		txtId = new JTextField();
+		txtId.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtId.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (txtId.getText().length() >= 9) // limit to 9 characters
+					e.consume();
+			}
+		});
+		txtId.setBounds(647, 343, 287, 35);
+		frame.getContentPane().add(txtId);
+
+		JButton backButton = new JButton("Back");
+		backButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				welcomeFrame.setVisible(true);
+			}
+		});
+		backButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		backButton.setBounds(633, 385, 179, 60);
+		backButton.setBackground(new Color(64, 166, 234));
+		backButton.setForeground(Color.white);
+		frame.getContentPane().add(backButton);
+
+		JButton logInButton = new JButton("Login");
+		logInButton.addActionListener((ActionListener) new LogIn(frame, txtUserName, txtPassword, txtId));
+		logInButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		logInButton.setBounds(822, 385, 179, 60);
+		logInButton.setBackground(new Color(64, 166, 234));
+		logInButton.setForeground(Color.white);
+		logInButton.setMnemonic(KeyEvent.VK_ENTER);
+
+		frame.getContentPane().add(logInButton);
+
+		frame.getContentPane().add(backgroundLabel);
+
+	}
+
+}

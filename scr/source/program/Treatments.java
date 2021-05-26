@@ -5,13 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Treatments {
-	private Map<Diseases, String> totalTreatment =new HashMap<Diseases, String>() {
+	private Map<Diseases, String> totalTreatment = new HashMap<Diseases, String>() {
 		{
-			put(Diseases.anemia,"Two 10 mg B12 pills a day for a month.");
+			put(Diseases.anemia, "Two 10 mg B12 pills a day for a month.");
 			put(Diseases.diet, "Schedule an appointment with a nutritionist.");
 			put(Diseases.bleeding, "Evacuate urgently to the hospital.");
-			put(Diseases.Hyperlipidemia, "Arrange a meeting with a nutritionist \n\t5 mg pill of Simobil daily for a week.");
-			put(Diseases.Disorder_of_blood_formation, " 10 mg pill of B12 per day for a month\n\t5 mg pill of folic acid a day for a month.");
+			put(Diseases.Hyperlipidemia,
+					"Arrange a meeting with a nutritionist \n\t5 mg pill of Simobil daily for a week.");
+			put(Diseases.Disorder_of_blood_formation,
+					" 10 mg pill of B12 per day for a month\n\t5 mg pill of folic acid a day for a month.");
 			put(Diseases.Hematological_disorder, "Injection of a hormone to stimulate red blood cells production.");
 			put(Diseases.Iron_poisoning, "Evacuate to the hospital.");
 			put(Diseases.Dehydration, "Complete lying down rest\n\treturning fluids to drinking.");
@@ -35,12 +37,11 @@ public class Treatments {
 			put(Diseases.Malnutrition, "Coordinate an appointment with a nutritionist.");
 		}
 	};
-	
-	public Map<Diseases, String> personalTreatment=new HashMap<Diseases, String>() ;
-	public Treatments(Map<Diseases, Integer> totalDiagnose)
-	{
-		for(Diseases d : totalDiagnose.keySet())
-		{
+
+	public Map<Diseases, String> personalTreatment = new HashMap<Diseases, String>();
+
+	public Treatments(Map<Diseases, Integer> totalDiagnose) {
+		for (Diseases d : totalDiagnose.keySet()) {
 			if (totalDiagnose.get(d) != 0)
 				personalTreatment.put(d, totalTreatment.get(d));
 		}

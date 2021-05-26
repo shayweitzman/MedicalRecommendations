@@ -23,7 +23,6 @@ public class Database {
 	private String password;
 	private String docID;
 
-
 	public Database(String username, String password, String docID) {
 		this.username = username;
 		this.password = password;
@@ -102,37 +101,31 @@ public class Database {
 		Path currentRelativePath = Paths.get("");
 		File file = new File(currentRelativePath.toAbsolutePath().toString() + "//source//Database//Users.csv");
 		try {
-			if (file.length()==2 || file.createNewFile())
-			{
+			if (file.length() == 2 || file.createNewFile()) {
 				FileWriter output = new FileWriter(file);
 				BufferedWriter bw = new BufferedWriter(output);
 				PrintWriter pw = new PrintWriter(bw);
-				
+
 				pw.println("ID" + "," + "Username" + "," + "Password");
 				pw.flush();
 				pw.close();
 			}
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 
 		}
-		if (isExist(this.docID,0))
-		{
+		if (isExist(this.docID, 0)) {
 			return "This ID is Already Taken";
-		}
-		else if(isExist(this.username,1))
-		{
+		} else if (isExist(this.username, 1)) {
 			return "This Username is Already Taken";
-		}
-		else
-		{
+		} else {
 			try {
 				FileWriter output = new FileWriter(file, true);
 				BufferedWriter bw = new BufferedWriter(output);
 				PrintWriter pw = new PrintWriter(bw);
-				
+
 				pw.println(docID + "," + username + "," + password);
 				pw.flush();
 				pw.close();
@@ -144,12 +137,7 @@ public class Database {
 			}
 		}
 		return "Signed Up Successfully";
-		
-			
-		
-		
-	}
 
-	
+	}
 
 }

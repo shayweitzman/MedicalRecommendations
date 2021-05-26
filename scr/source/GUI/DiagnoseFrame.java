@@ -37,7 +37,7 @@ public class DiagnoseFrame implements ActionListener {
 	/**
 	 * Create the application.
 	 */
-	public DiagnoseFrame(MainFrame user,String results, String pID, String docName, String patientName) {
+	public DiagnoseFrame(MainFrame user, String results, String pID, String docName, String patientName) {
 		this.results = results;
 		this.pID = pID;
 		this.docName = docName;
@@ -87,10 +87,10 @@ public class DiagnoseFrame implements ActionListener {
 		});
 		logOutButton.setBounds(728, 0, 157, 60);
 		frame.getContentPane().add(logOutButton);
-		
+
 		JButton backButton = new JButton("Back");
 		backButton.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
@@ -99,7 +99,7 @@ public class DiagnoseFrame implements ActionListener {
 		});
 		backButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		backButton.setBounds(64, 507, 237, 94);
-		backButton.setBackground(new Color(64,166,234));
+		backButton.setBackground(new Color(64, 166, 234));
 		backButton.setForeground(Color.white);
 		frame.getContentPane().add(backButton);
 
@@ -130,9 +130,11 @@ public class DiagnoseFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Path currentRelativePath = Paths.get("");
 		try {
-			File file = new File(currentRelativePath.toAbsolutePath().toString() + "//source//Patients//" + pID + ".txt");
+			File file = new File(
+					currentRelativePath.toAbsolutePath().toString() + "//source//Patients//" + pID + ".txt");
 			if (!Desktop.isDesktopSupported()) {
-				JOptionPane.showMessageDialog(frame, "This feature is not supported", "Warning", JOptionPane.DEFAULT_OPTION);
+				JOptionPane.showMessageDialog(frame, "This feature is not supported", "Warning",
+						JOptionPane.DEFAULT_OPTION);
 				return;
 			}
 			Desktop desktop = Desktop.getDesktop();

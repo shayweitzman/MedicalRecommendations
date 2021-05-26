@@ -26,7 +26,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import javax.swing.JSlider;
 
-public class MainFrame  {
+public class MainFrame {
 
 	private String name;
 	private JFrame frame;
@@ -47,15 +47,15 @@ public class MainFrame  {
 	/**
 	 * Create the application.
 	 */
-	public MainFrame(String userName)  {
+	public MainFrame(String userName) {
 		this.name = userName;
 		initialize();
 	}
-	
+
 	public static void visible(MainFrame user) {
 		user.cleanPage();
 	}
-	
+
 	public void cleanPage() {
 		this.nameField.setText("");
 		IdField.setText("");
@@ -86,7 +86,7 @@ public class MainFrame  {
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.getContentPane().setLayout(null);
 		this.frame.setVisible(true);
-		
+
 		ImageIcon image = new ImageIcon(
 				Welcome.currentRelativePath.toAbsolutePath().toString() + "//source//images//detailes.png");
 		JLabel backgroundLabel = new JLabel(Welcome.resizeIcon(image, 900, 723));
@@ -108,7 +108,7 @@ public class MainFrame  {
 				Welcome.frame.setVisible(true);
 			}
 		});
-		logOutButton.setBounds(896, 20, 154, 57);
+		logOutButton.setBounds(728, 0, 157, 60);
 		frame.getContentPane().add(logOutButton);
 
 		JLabel docNameLabel = new JLabel("Hello " + this.name);
@@ -137,12 +137,12 @@ public class MainFrame  {
 		IdField = new JTextField();
 		IdField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		IdField.addKeyListener(new KeyAdapter() {
-		        @Override
-		        public void keyTyped(KeyEvent e) {
-		            if (IdField.getText().length() >= 9 ) // limit to 9 characters
-		                e.consume();
-		        }
-		    });
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (IdField.getText().length() >= 9) // limit to 9 characters
+					e.consume();
+			}
+		});
 		IdField.setBounds(345, 241, 197, 37);
 		frame.getContentPane().add(IdField);
 
@@ -255,63 +255,55 @@ public class MainFrame  {
 		APField.setBounds(648, 398, 198, 37);
 		frame.getContentPane().add(APField);
 
-		
 		lymphSlider = new JSlider();
 		lymphSlider.setBounds(90, 489, 272, 26);
 		frame.getContentPane().add(lymphSlider);
-		
+
 		neutSlider = new JSlider();
 		neutSlider.setBounds(506, 489, 303, 26);
 		frame.getContentPane().add(neutSlider);
 		frame.setBounds(100, 100, 900, 650);
-		
+
 		JLabel lymphLabel_1 = new JLabel("50%");
 		lymphLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lymphLabel_1.setBounds(372, 478, 82, 37);
 		frame.getContentPane().add(lymphLabel_1);
-		
+
 		JLabel neutLabel_1 = new JLabel("50%");
 		neutLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		neutLabel_1.setBounds(819, 478, 74, 37);
 		frame.getContentPane().add(neutLabel_1);
-		
-		lymphSlider.addChangeListener(new ChangeListener()
-         {
-            public void stateChanged(ChangeEvent event)
-            {
-               // update text field when the slider value changes
-               JSlider source = (JSlider) event.getSource();
-               lymphLabel_1.setText("" + source.getValue() + "%");
-            }
-         });
-		
-		neutSlider.addChangeListener(new ChangeListener()
-        {
-           public void stateChanged(ChangeEvent event)
-           {
-              // update text field when the slider value changes
-              JSlider source = (JSlider) event.getSource();
-              neutLabel_1.setText("" + source.getValue() + "%");
-           }
-        });
-		
+
+		lymphSlider.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent event) {
+				// update text field when the slider value changes
+				JSlider source = (JSlider) event.getSource();
+				lymphLabel_1.setText("" + source.getValue() + "%");
+			}
+		});
+
+		neutSlider.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent event) {
+				// update text field when the slider value changes
+				JSlider source = (JSlider) event.getSource();
+				neutLabel_1.setText("" + source.getValue() + "%");
+			}
+		});
+
 		JButton diagnoseButton = new JButton("Diagnose");
 		diagnoseButton.setBackground(Color.WHITE);
 		diagnoseButton.setForeground(new Color(64, 166, 234));
-		diagnoseButton.addActionListener((ActionListener) new diagnose(this,frame, this.name,nameField, IdField, ageField, WBCField,
-				neutSlider, lymphSlider, UreaField, RBCField, hbField, creatinieField, ironField, HDLField, APField));
-		
-		
-		
+		diagnoseButton.addActionListener((ActionListener) new diagnose(this, frame, this.name, nameField, IdField,
+				ageField, WBCField, neutSlider, lymphSlider, UreaField, RBCField, hbField, creatinieField, ironField,
+				HDLField, APField));
+
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		diagnoseButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		diagnoseButton.setBounds(639, 526, 234, 86);
 		frame.getContentPane().add(diagnoseButton);
 		frame.getContentPane().add(backgroundLabel);
-		
-		
+
 	}
 
-	
 }

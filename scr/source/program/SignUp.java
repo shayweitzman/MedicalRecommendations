@@ -10,17 +10,17 @@ import javax.swing.JTextField;
 import Database.Database;
 import GUI.Welcome;
 
-
 public class SignUp extends Form implements ActionListener {
 	private JTextField txtCPassword;
 
-	public SignUp() {};
-	public SignUp(JFrame SignUpframe,JTextField txtUserName, JTextField txtPassword, JTextField txtId,
+	public SignUp() {
+	};
+
+	public SignUp(JFrame SignUpframe, JTextField txtUserName, JTextField txtPassword, JTextField txtId,
 			JTextField txtCPassword) {
 		super(SignUpframe, txtUserName, txtPassword, txtId);
 		this.txtCPassword = txtCPassword;
 
-		
 	}
 
 	@Override
