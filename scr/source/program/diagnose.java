@@ -483,10 +483,8 @@ public class diagnose implements ActionListener {
 		}
 		try {
 			for (String key : this.dictionary.keySet()) {
-				if (key.equals("id") && (this.dictionary.get(key).getText().length() != 9 || Integer.parseInt(this.dictionary.get(key).getText())<0)) {
-					System.out.println(Integer.parseInt(this.dictionary.get(key).getText()));
+				if (key.equals("id") && (this.dictionary.get(key).getText().length() != 9 || Integer.parseInt(this.dictionary.get(key).getText())<0)) 
 					throw new Exception();
-				}
 				else if(key.equals("name"))
 				{
 					for(int i=0;i<this.dictionary.get(key).getText().length();i++)

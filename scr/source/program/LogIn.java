@@ -11,7 +11,9 @@ import Database.Database;
 import GUI.MainFrame;
 
 public class LogIn extends Form implements ActionListener {
-	public LogIn() {};
+	public LogIn() {
+	};
+
 	public LogIn(JFrame SignInframe, JTextField txtUserName, JTextField txtPassword, JTextField txtId) {
 		super(SignInframe, txtUserName, txtPassword, txtId);
 	}
