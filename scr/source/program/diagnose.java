@@ -483,9 +483,11 @@ public class diagnose implements ActionListener {
 		}
 		try {
 			for (String key : this.dictionary.keySet()) {
-				if (key.equals("id") && this.dictionary.get(key).getText().length() != 9)
+				if (key.equals("id") && (this.dictionary.get(key).getText().length() != 9 || Integer.parseInt(this.dictionary.get(key).getText())<0)) {
+					System.out.println(Integer.parseInt(this.dictionary.get(key).getText()));
 					throw new Exception();
-				if(key.equals("name"))
+				}
+				else if(key.equals("name"))
 				{
 					for(int i=0;i<this.dictionary.get(key).getText().length();i++)
 					{
@@ -494,6 +496,10 @@ public class diagnose implements ActionListener {
 							throw new Exception();
 						}
 					}
+				}
+				else if (key.equals("age")) {
+					if(Integer.parseInt(this.dictionary.get(key).getText()) < 0 || Integer.parseInt(this.dictionary.get(key).getText()) > 120)
+						throw new Exception();
 				}
 				if (!key.equals("name") && this.dictionary.get(key).getText().length() > 0) {
 					if(Double.parseDouble(this.dictionary.get(key).getText()) < 0)
