@@ -157,6 +157,9 @@ public class diagnose implements ActionListener {
 			checkIron(this.dictionary.get("iron").getText());
 			checkHDL(this.dictionary.get("HDL").getText());
 			checkAP(this.dictionary.get("AP").getText());
+			this.smoker = forward_question(smoker, "Does the patient smoke?");
+			if(this.smoker)
+				addRisk(Diseases.Smoker, 10);
 
 			this.frame.setVisible(false);
 			Treatments personalTreatment = new Treatments(totalDiagnose);
