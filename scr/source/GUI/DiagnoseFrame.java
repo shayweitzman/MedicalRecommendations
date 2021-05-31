@@ -112,7 +112,7 @@ public class DiagnoseFrame implements ActionListener {
 		frame.getContentPane().add(PHistoryButton);
 
 		JTextArea textArea = new JTextArea(this.results);
-		textArea.setFont(new Font("Courier New", Font.PLAIN, 13));
+		textArea.setFont(new Font("Courier New", Font.PLAIN, 12));
 		textArea.setBounds(24, 177, 585, 265);
 		textArea.setEditable(false);
 		JScrollPane scroll = new JScrollPane(textArea);

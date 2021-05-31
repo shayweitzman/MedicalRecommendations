@@ -7,6 +7,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/yinon/OneDrive/מסמכים/לימודים/סמי/תכנות/שנה ב/סימסטר ב/Tests/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shay/Desktop/Medical Recommendation/junit-4.10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

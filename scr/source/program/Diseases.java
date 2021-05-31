@@ -1,9 +1,9 @@
 package program;
 
 public enum Diseases {
-	anemia,
-	diet,
-	bleeding,
+	Anemia,
+	Diet,
+	Bleeding,
 	Hyperlipidemia,
 	Disorder_of_blood_formation,
 	Hematological_disorder,
@@ -13,7 +13,7 @@ public enum Diseases {
 	Vitamin_deficiency,
 	Viral_disease,
 	Diseases_of_the_biliary_tract,
-	heart_diseases,
+	Heart_Diseases,
 	Blood_disease,
 	Liver_disease,
 	Kidney_disease,
@@ -23,7 +23,7 @@ public enum Diseases {
 	Lung_disease,
 	Overactive_thyroid_gland,
 	Adult_diabetes,
-	cancer,
+	Cancer,
 	Increased_consumption_of_meat,
 	Use_of_various_medications,
 	Malnutrition

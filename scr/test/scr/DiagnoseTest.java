@@ -63,7 +63,7 @@ public class DiagnoseTest {
 		d.checkNeut(d.getNeut());
 		assertEquals(new Integer(3), d.totalDiagnose.get(Diseases.Disorder_of_blood_formation));
 		assertEquals(new Integer(6), d.totalDiagnose.get(Diseases.Infection));
-		assertEquals(new Integer(1), d.totalDiagnose.get(Diseases.cancer));
+		assertEquals(new Integer(1), d.totalDiagnose.get(Diseases.Cancer));
 	}
 
 	@Test
@@ -71,7 +71,7 @@ public class DiagnoseTest {
 		resetTotalDiagnose();
 		d.checkWBC("3500", 55);
 		assertEquals(new Integer(3), d.totalDiagnose.get(Diseases.Viral_disease));
-		assertEquals(new Integer(1), d.totalDiagnose.get(Diseases.cancer));
+		assertEquals(new Integer(1), d.totalDiagnose.get(Diseases.Cancer));
 	}
 
 	@Test

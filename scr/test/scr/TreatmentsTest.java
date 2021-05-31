@@ -21,9 +21,9 @@ public class TreatmentsTest {
 	@Before
 	public void setUp() {
 		totalDiagnose.put(Diseases.Infection, 2);
-		totalDiagnose.put(Diseases.cancer, 12);
+		totalDiagnose.put(Diseases.Cancer, 12);
 		totalDiagnose.put(Diseases.Blood_disease, 0);
-		totalDiagnose.put(Diseases.diet, 4);
+		totalDiagnose.put(Diseases.Diet, 4);
 		this.t = new Treatments(totalDiagnose);
 		;
 
@@ -31,10 +31,10 @@ public class TreatmentsTest {
 
 	@Test
 	public void test() {
-		assertEquals("Entrectinib.", t.personalTreatment.get(Diseases.cancer));
+		assertEquals("Entrectinib.", t.personalTreatment.get(Diseases.Cancer));
 		assertEquals("Dedicated antibiotics.", t.personalTreatment.get(Diseases.Infection));
 		assertEquals(null, t.personalTreatment.get(Diseases.Blood_disease));
-		assertEquals("Schedule an appointment with a nutritionist.", t.personalTreatment.get(Diseases.diet));
+		assertEquals("Schedule an appointment with a nutritionist.", t.personalTreatment.get(Diseases.Diet));
 	}
 
 }
