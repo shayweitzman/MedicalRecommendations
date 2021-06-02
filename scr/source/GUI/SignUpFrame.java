@@ -62,6 +62,13 @@ public class SignUpFrame implements ActionListener {
 
 		txtUserName = new JTextField();
 		txtUserName.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtUserName.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if (txtUserName.getText().length() >= 8) // limit to 8 characters
+					e.consume();
+			}
+		});
 		txtUserName.setBounds(650, 215, 263, 35);
 		frame.getContentPane().add(txtUserName);
 		txtUserName.setColumns(10);
